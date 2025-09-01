@@ -2819,6 +2819,7 @@ input, select, textarea {
 	  border-bottom: 0;
 	  text-decoration: none;
 	  box-shadow: none;
+		cursor: pointet;
 	}
 		.features li {
 			width: calc(33.33333% - 2em);
@@ -3791,3 +3792,7 @@ input, select, textarea {
 			}
 
 		}
+
+a {
+  cursor: pointer;
+}

@@ -2812,6 +2812,11 @@ input, select, textarea {
 		padding: 0;
 		list-style: none;
 	}
+		.features li a {
+		  border-bottom: none !important;
+		  text-decoration: none !important;
+		  box-shadow: none !important;
+		}
 
 		.features li {
 			width: calc(33.33333% - 2em);

@@ -2263,6 +2263,9 @@ input, select, textarea {
 			margin: 0 0 2em 0;
 			cursor: default;
 		}
+		a .icon.major {
+			cursor: pointer;
+		}
 
 			.icon.major:before {
 				display: inline-block;
@@ -3792,7 +3795,3 @@ input, select, textarea {
 			}
 
 		}
-
-a {
-  cursor: pointer !important;
-}

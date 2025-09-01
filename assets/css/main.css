@@ -3291,6 +3291,7 @@ input, select, textarea {
 					-ms-transition: font-size 0.2s ease;
 					transition: font-size 0.2s ease;
 					display: inline-block;
+					cursor: pointer;
 					height: 2.25em;
 					line-height: 2.25em;
 					padding: 0 1.25em;

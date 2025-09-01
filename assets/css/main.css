@@ -2812,17 +2812,14 @@ input, select, textarea {
 		padding: 0;
 		list-style: none;
 	}
-		/* 아이콘 링크에서는 밑줄 제거 */
-		.features li a.icon {
-		  border-bottom: none !important;
-		  text-decoration: none !important;
-		  box-shadow: none !important;
-		}
-		.features li a.icon:hover {
-		  border-bottom: none !important;
-		  text-decoration: none !important;
-		}
 
+	.features li > a,
+	.features li > a:hover,
+	.features li > a:focus {
+	  border-bottom: 0;
+	  text-decoration: none;
+	  box-shadow: none;
+	}
 		.features li {
 			width: calc(33.33333% - 2em);
 			margin-left: 2em;

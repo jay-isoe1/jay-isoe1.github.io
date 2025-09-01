@@ -2264,7 +2264,7 @@ input, select, textarea {
 			cursor: default;
 		}
 		a .icon.major {
-			cursor: pointer;
+			cursor: pointer !important;
 		}
 
 			.icon.major:before {
@@ -2819,10 +2819,10 @@ input, select, textarea {
 	.features li > a,
 	.features li > a:hover,
 	.features li > a:focus {
-	  border-bottom: 0;
-	  text-decoration: none;
-	  box-shadow: none;
-		cursor: pointet;
+		border-bottom: 0;
+		text-decoration: none;
+		box-shadow: none;
+		cursor: pointer;
 	}
 		.features li {
 			width: calc(33.33333% - 2em);

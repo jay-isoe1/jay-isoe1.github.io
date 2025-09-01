@@ -3794,5 +3794,5 @@ input, select, textarea {
 		}
 
 a {
-  cursor: pointer;
+  cursor: pointer !important;
 }

@@ -3849,27 +3849,29 @@ input, select, textarea {
 
 .image-container img {
   display: block;
+}
+
+.image-link img {
+  display: block;
+  width: 100%;
   border-radius: 8px;
   transition: transform 0.3s ease;
 }
 
 .image-caption {
   position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0, 0, 0, 0.6);   /* half-transparent */
+  inset: 0;                    /* top:0; right:0; bottom:0; left:0 */
+  background: rgba(0,0,0,0.6);
   color: #fff;
   display: flex;
-  justify-content: center;          /* 가로 중앙 */
-  align-items: center;              /* 세로 중앙 */
+  justify-content: center;
+  align-items: center;
   font-size: 1em;
   opacity: 0;
   transition: opacity 0.3s ease;
+  z-index: 2;                  /* 이미지 위로 */
+  pointer-events: none;        /* 캡션 위 클릭도 링크로 전달 */
 }
 
-.image-container:hover .image-caption {
-  opacity: 1;
-}
-
-.image-container:hover img {
-  transform: scale(1.05);           /* 살짝 확대 효과 */
-}
+.image-container:hover .image-caption { opacity: 1; }
+.image-container:hover .image-link img { transform: scale(1.05); }

@@ -3804,3 +3804,24 @@ input, select, textarea {
   color: #666;          /* (선택) 색상도 조금 연하게 */
 }
 
+
+/* Orbit */
+.preview-flex {
+  display: flex;
+  align-items: center;   /* 이미지와 텍스트 세로 중앙 정렬 */
+  gap: 2em;              /* 이미지와 텍스트 간격 */
+  margin: 2em 0;
+}
+
+.preview-flex img {
+  max-width: 280px;      /* 이미지 크기 줄이기 */
+  border-radius: 8px;
+}
+
+.preview-flex .description {
+  flex: 1;               /* 오른쪽 영역 넓게 */
+  font-size: 0.95em;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+

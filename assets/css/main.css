@@ -3847,8 +3847,9 @@ input, select, textarea {
   border-radius: 8px;
 }
 
-.image-container img {
+.image-link {
   display: block;
+  position: relative;
 }
 
 .image-link img {
@@ -3861,7 +3862,7 @@ input, select, textarea {
 .image-caption {
   position: absolute;
   inset: 0;                    /* top:0; right:0; bottom:0; left:0 */
-  background: rgba(0,0,0,0.6);
+  background: rgba(0,0,0,0.4);
   color: #fff;
   display: flex;
   justify-content: center;
@@ -3874,4 +3875,3 @@ input, select, textarea {
 }
 
 .image-container:hover .image-caption { opacity: 1; }
-.image-container:hover .image-link img { transform: scale(1.05); }

@@ -3835,6 +3835,7 @@ input, select, textarea {
   }
   .preview-flex .description {
     margin-top: 1em;
+	text-align: justify;
   }
 }
 

@@ -3802,6 +3802,5 @@ input, select, textarea {
 .features .tools {
   font-size: 12px;      /* 글자 크기 줄이기 */
   color: #666;          /* (선택) 색상도 조금 연하게 */
-  font-style: italic;   /* (선택) 기울임 */
 }
 

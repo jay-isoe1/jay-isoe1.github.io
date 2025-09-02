@@ -3822,7 +3822,6 @@ input, select, textarea {
 .preview-flex .description {
   flex: 1;
   font-size: 0.95em;
-  color: #222;
 }
 
 /* 📱 반응형 (화면 768px 이하일 때) */

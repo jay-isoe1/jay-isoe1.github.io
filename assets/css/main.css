@@ -3845,6 +3845,7 @@ input, select, textarea {
 .preview-flex .description {
   flex: 1;
   font-size: 0.95em;
+text-align: justify;	
 }
 
 /* 📱 반응형 (화면 768px 이하일 때) */

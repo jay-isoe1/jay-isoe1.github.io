@@ -3800,7 +3800,7 @@ input, select, textarea {
 /* Tools */
 
 .features .tools {
-  font-size: 12px;      /* 글자 크기 줄이기 */
+  font-size: 0.85em;      /* 글자 크기 줄이기 */
   color: #666;          /* (선택) 색상도 조금 연하게 */
 }
 

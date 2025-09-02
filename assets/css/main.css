@@ -3804,6 +3804,29 @@ input, select, textarea {
   color: #666;          /* (선택) 색상도 조금 연하게 */
 }
 
+/* Projects Custom */
+
+.project-block.dark {
+  background: #000;       /* 검정 배경 */
+  color: #eee;            /* 텍스트 색 */
+  padding: 2.5rem 2rem;   /* 안쪽 여백 */
+  border-radius: 12px;    /* 카드 둥근 모서리 */
+  margin: 2em 0;
+}
+
+/* description 텍스트는 더 밝게 */
+.project-block.dark .description {
+  color: #eee;
+}
+
+/* 링크 색 대비 조정 */
+.project-block.dark a {
+  color: #ffd166;
+}
+.project-block.dark a:hover {
+  color: #ffe08a;
+}
+
 
 /* Orbit */
 

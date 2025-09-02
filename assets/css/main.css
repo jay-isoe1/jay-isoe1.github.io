@@ -3815,7 +3815,7 @@ input, select, textarea {
 }
 
 .preview-flex img {
-  max-width: 280px;      /* 이미지 크기 */
+  max-width: 360px;      /* 이미지 크기 */
   border-radius: 8px;
 }
 

@@ -3818,7 +3818,9 @@ input, select, textarea {
 .project-block.dark .description {
   color: #fff;
 }
-
+.project-block.dark .description {
+  color: #fff;
+}
 /* 링크 색 대비 조정 */
 .project-block.dark a {
   color: #ffd166;

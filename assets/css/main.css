@@ -3899,3 +3899,15 @@ text-align: justify;
 }
 
 .image-container:hover .image-caption { opacity: 1; }
+
+
+.pubs{
+	list-style: none;
+	padding-left: 0;
+}
+
+.pubs li::before {
+  content: "✦";          /* ✦, ✧, ☆, ★ */
+  margin-right: 0.5em;
+  color: #eee;
+}

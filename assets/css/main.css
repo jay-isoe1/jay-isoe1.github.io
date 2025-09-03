@@ -3806,32 +3806,40 @@ input, select, textarea {
 
 /* Projects Custom */
 
-.project-block.dark {
-  background: #000;       /* 검정 배경 */
-  color: #eee;            /* 텍스트 색 */
-  padding: 2.5rem 2rem;   /* 안쪽 여백 */
-  border-radius: 12px;    /* 카드 둥근 모서리 */
-  margin: 2em 0;
+/* 기본 project-block 공통 스타일 */
+.project-block {
+  padding: 2em;
 }
 
-/* description 텍스트는 더 밝게 */
-.project-block.dark .description {
+/* 홀수번째: 검정 배경 + 흰 글씨 */
+.project-block:nth-child(odd) {
+  background: #000;
   color: #fff;
 }
-.project-block.dark .description {
-  color: #fff;
+
+/* 짝수번째: 흰 배경 + 검정 글씨 */
+.project-block:nth-child(even) {
+  background: #fff;
+  color: #000;
 }
-/* 링크 색 대비 조정 */
-.project-block.dark a {
+
+/* 짝수 배경일 때 링크 색상 */
+.project-block:nth-child(even) a {
+  color: #0055aa;
+}
+.project-block:nth-child(even) a:hover {
+  color: #003366;
+}
+
+/* 홀수 배경일 때 링크 색상 */
+.project-block:nth-child(odd) a {
   color: #ffd166;
 }
-.project-block.dark a:hover {
+.project-block:nth-child(odd) a:hover {
   color: #ffe08a;
 }
 
-
 /* Orbit */
-
 .preview-flex {
   display: flex;
   align-items: center;   /* 세로 중앙 정렬 */

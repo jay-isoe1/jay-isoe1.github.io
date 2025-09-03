@@ -3900,14 +3900,20 @@ text-align: justify;
 
 .image-container:hover .image-caption { opacity: 1; }
 
-
+/* publications */
 .pubs{
 	list-style: none;
 	padding-left: 0;
 }
 
+.pubs li {
+  position: relative;
+  padding-left: 1.2em;   /* ✦ 마커가 들어갈 자리 확보 */
+}
+
 .pubs li::before {
   content: "✦";          /* ✦, ✧, ☆, ★ */
-  margin-right: 0.5em;
+  position: absolute;
   color: #eee;
+	left: 0;
 }

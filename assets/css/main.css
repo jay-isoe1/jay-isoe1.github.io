@@ -4010,15 +4010,15 @@ text-align: justify;
 	left: 0;
 }
 
-.embed-wrap{
+.p5-embed {
   position: relative;
   width: 100%;
-  aspect-ratio: 16/9; /* 비율은 취향대로 */
+  aspect-ratio: 16/9;   /* 원하는 비율 */
+  border-radius: 8px;
   overflow: hidden;
-  border-radius: 12px;
 }
-.embed-wrap iframe{
+.p5-embed iframe {
   position: absolute; inset: 0;
   width: 100%; height: 100%;
-  border: 0;
+  border: none;
 }

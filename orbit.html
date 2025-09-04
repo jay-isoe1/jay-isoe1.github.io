@@ -21,20 +21,57 @@
       <p>Demonstrated how color and light generate perceptual illusions, offering design frameworks that link computation, interaction, and human perception.</p>
       
       <div id="orbit-host" class="p5-fit"></div>
-      <script src="https://cdn.jsdelivr.net/npm/p5@1/lib/p5.min.js"></script>
-          title="Temporal Disparity Illusion"
-          loading="lazy"
-          referrerpolicy="no-referrer"
-          sandbox="allow-scripts allow-same-origin"
-        ></iframe>
+      <div class="description" style="max-width:960px;margin:0 auto 2rem; text-align:justify;">
+        <p><strong>Temporal Disparity Illusion</strong> is revealing hidden flows of motion…</p>
       </div>
-      <div class="description">
-        <p>
-          <strong>Temporal Disparity Illusion</strong> is revealing hidden flows of motion…
-        </p>
-      </div>
-    </div>
+    </section>
   </div>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/p5@1/lib/p5.min.js"></script>
+
+<script>
+(() => {
+  const host = document.getElementById('orbit-host');
+
+  const sketch = (p) => {
+    function fit(){
+      const w = Math.max(1, host.clientWidth);
+      const h = Math.max(1, host.clientHeight); // CSS aspect-ratio로 확보된 높이
+      if (p.canvas) p.resizeCanvas(w, h);
+      else p.createCanvas(w, h).parent(host);
+      p.pixelDensity(window.devicePixelRatio || 1);
+    }
+
+    p.setup = () => {
+      fit();
+      p.colorMode(p.HSB, 360, 100, 100);
+      p.noStroke();
+      p.frameRate(60);
+    };
+
+    p.draw = () => {
+      p.background(0,0,98);
+      const t = p.frameCount * 0.01;
+      for (let i = 0; i < 240; i++) {
+        const r = i * 1.2, a = i * 0.22 + t;
+        const x = p.width/2  + Math.cos(a)*r;
+        const y = p.height/2 + Math.sin(a)*r*0.75;
+        p.fill((i*6 + t*180) % 360, 70, 60);
+        p.circle(x, y, 10);
+      }
+    };
+
+    p.windowResized = fit;
+
+    const ro = new ResizeObserver(fit);
+    ro.observe(host);
+    p.remove = () => ro.disconnect();
+  };
+
+  new p5(sketch, host);
+})();
+</script>
 
   <div class="project-block">
     <div class="preview-flex">

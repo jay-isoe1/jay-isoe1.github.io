@@ -3840,38 +3840,67 @@ input, select, textarea {
 }
 
 /* Orbit */
+/* 1) 이미지 상한 해제 + 컨테이너가 폭을 먹도록 */
 .preview-flex {
   display: flex;
-  align-items: center;   /* 세로 중앙 정렬 */
-  gap: 2em;              /* 이미지와 텍스트 간격 */
+  align-items: stretch;     /* 높이도 맞춰 주기 */
+  gap: 2em;
   margin: 2em 0;
 }
 
+/* 이미지 360px 상한 제거 (이 규칙이 있으면 반드시 덮어써야 함) */
 .preview-flex img {
-  max-width: 360px;      /* 이미지 크기 */
+  max-width: none;          /* ← 360px 제한 해제 */
+  width: 100%;
+  height: auto;
   border-radius: 8px;
 }
 
-.preview-flex .description {
-  flex: 1;
-  font-size: 0.95em;
-text-align: justify;	
+/* 왼쪽 영역(이미지/캔버스) 비율 키우기 */
+.preview-flex .image-container {
+  display: block;           /* inline-block → block (flex 비율 받게) */
+  flex: 2 1 720px;          /* ← 넉넉한 기본폭 */
+  min-width: 480px;         /* 너무 줄지 않게 */
+  border-radius: 8px;
+  overflow: hidden;
 }
 
-/* 📱 반응형 (화면 768px 이하일 때) */
+/* 오른쪽 설명 영역 */
+.preview-flex .description {
+  flex: 1 1 420px;
+  font-size: 0.95em;
+  text-align: justify;
+}
+
+/* hover용 내부 이미지 규칙은 유지하되, 부모가 커졌으니 width:100%만 */
+.image-link img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+/* 📱 반응형 */
 @media screen and (max-width: 768px) {
   .preview-flex {
-    flex-direction: column;   /* 세로 배치 */
-    text-align: center;       /* 가운데 정렬 */
+    flex-direction: column;
+    text-align: center;
+  }
+  .preview-flex .image-container {
+    flex: none;
+    width: 100%;            /* 모바일에선 꽉 차게 */
+    min-width: 0;
   }
   .preview-flex img {
-    max-width: 100%;          /* 화면에 꽉 차게 */
+    max-width: 100%;        /* 모바일 상한은 화면 기준 */
   }
   .preview-flex .description {
     margin-top: 1em;
-	text-align: justify;
+    text-align: justify;
   }
 }
+
 
 /* hover-caption */
 .image-container {

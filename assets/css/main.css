@@ -3825,8 +3825,9 @@ input, select, textarea {
 .project-block:nth-child(even) a {
   color: #0055aa;
 }
-.project-block:nth-child(even) strong {
-  color: #000;   /* 검정 */
+.project-block:nth-child(odd) strong,
+.project-block:nth-child(odd) b {
+  color: #ffffff !important;
 }
 .project-block:nth-child(even) a:hover {
   color: #003366;

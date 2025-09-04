@@ -3899,7 +3899,60 @@ input, select, textarea {
     margin-top: 1em;
     text-align: justify;
   }
+}/* Orbit */
+.preview-flex {
+  display: flex;
+  align-items: center;   /* 세로 중앙 정렬 */
+  gap: 2em;              /* 이미지와 텍스트 간격 */
+  margin: 2em 0;
 }
+
+.preview-flex img {
+  max-width: 360px;      /* 이미지 크기 */
+  border-radius: 8px;
+}
+
+.preview-flex .description {
+  flex: 1;
+  font-size: 0.95em;
+text-align: justify;	
+}
+
+/* 📱 반응형 (화면 768px 이하일 때) */
+@media screen and (max-width: 768px) {
+  .preview-flex {
+    flex-direction: column;   /* 세로 배치 */
+    text-align: center;       /* 가운데 정렬 */
+  }
+  .preview-flex img {
+    max-width: 100%;          /* 화면에 꽉 차게 */
+  }
+  .preview-flex .description {
+    margin-top: 1em;
+	text-align: justify;
+  }
+}
+
+/* hover-caption */
+.image-container {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.image-link {
+  display: block;
+  position: relative;
+}
+
+.image-link img {
+  display: block;
+  width: 100%;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+} 
+여기서 문제 생긴 것 같네 
 
 
 /* hover-caption */

@@ -3806,24 +3806,22 @@ input, select, textarea {
 
 /* Projects Custom */
 
-/* 기본 project-block 공통 스타일 */
 .project-block {
   padding: 2em;
 }
 
-/* 홀수번째: 검정 배경 + 흰 글씨 */
+/* odd : black bg + white font */
 .project-block:nth-child(odd) {
   background: #000;
   color: #fff !important;
 }
 
-/* 짝수번째: 흰 배경 + 검정 글씨 */
+/* even : white bg + black font */
 .project-block:nth-child(even) {
   background: #fff;
   color: #000;
 }
-
-/* 짝수 배경일 때 링크 색상 */
+/* even-bg */
 .project-block:nth-child(even) a {
   color: #0055aa;
 }
@@ -3834,7 +3832,7 @@ input, select, textarea {
   color: #003366;
 }
 
-/* 홀수 배경일 때 링크 색상 */
+/* odd-bg */
 .project-block:nth-child(odd) a {
   color: #ffd166;
 }

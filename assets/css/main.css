@@ -3827,6 +3827,9 @@ input, select, textarea {
 .project-block:nth-child(even) a {
   color: #0055aa;
 }
+.project-block:nth-child(even) strong {
+  color: #000;   /* 검정 */
+}
 .project-block:nth-child(even) a:hover {
   color: #003366;
 }
@@ -3834,6 +3837,9 @@ input, select, textarea {
 /* 홀수 배경일 때 링크 색상 */
 .project-block:nth-child(odd) a {
   color: #ffd166;
+}
+.project-block:nth-child(odd) strong {
+  color: #fff;   /* 완전 흰색 */
 }
 .project-block:nth-child(odd) a:hover {
   color: #ffe08a;

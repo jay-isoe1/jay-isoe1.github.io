@@ -3908,6 +3908,13 @@ text-align: justify;
 
 .image-container:hover .image-caption { opacity: 1; }
 
+
+/* ascent */
+.ascent .description strong {
+  color: #111 !important;   /* 완전 검정 느낌 */
+  /* color: #2b2b2b !important;  ← 살짝 부드러운 진회색 원하면 이 줄로 */
+}
+
 /* publications */
 .pubs{
 	list-style: none;

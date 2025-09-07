@@ -3847,7 +3847,7 @@ input, select, textarea {
 
 .preview-flex img {
   max-width: 360px;      /* 이미지 크기 */
-  border-radius: 8px;
+  border-radius: 4px;
 }
 
 .preview-flex .description {

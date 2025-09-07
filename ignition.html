@@ -22,6 +22,59 @@
       <h2>Overview</h2>
       <p>Showed how shifts in color and motion blur the boundary between vision and feeling, producing emotional illusions that question how perception is constructed.</p>
 
+      <section id="ignition-videos" class="main">
+        <header class="major">
+          <h2>Works (2020–2022)</h2>
+          <p>Color-driven emotional illusions across film, advertising, and game intros.</p>
+        </header>
+      
+        <div class="video-cards">
+          <!-- 예시 1: 로컬 파일 -->
+          <article class="vcard" data-type="Film" data-year="2021" data-color="crimson, teal">
+            <button class="vthumb" data-src="assets/videos/film_reel_2021.mp4" data-kind="file" aria-label="Play Film Reel 2021">
+              <img src="images/ignition/film_reel_2021.jpg" alt="Film Reel 2021 — crimson/teal mood">
+              <span class="play">&#9658;</span>
+            </button>
+            <div class="vmeta">
+              <h3>Film Reel — 2021</h3>
+              <p class="sub">Filmmaking · <span>2021</span> · <em>crimson / teal</em></p>
+            </div>
+          </article>
+      
+          <!-- 예시 2: 유튜브 링크 -->
+          <article class="vcard" data-type="Advertising" data-year="2020" data-color="amber, indigo">
+            <button class="vthumb" data-src="https://www.youtube.com/embed/VIDEO_ID?autoplay=1" data-kind="yt" aria-label="Play Ad Spot 2020">
+              <img src="images/ignition/ad_spot_2020.jpg" alt="Advertising Spot 2020 — amber/indigo">
+              <span class="play">&#9658;</span>
+            </button>
+            <div class="vmeta">
+              <h3>Ad Spot — 2020</h3>
+              <p class="sub">Advertising Video · <span>2020</span> · <em>amber / indigo</em></p>
+            </div>
+          </article>
+      
+          <!-- 예시 3: 게임 인트로 -->
+          <article class="vcard" data-type="Game Intro" data-year="2022" data-color="neon magenta, cyan">
+            <button class="vthumb" data-src="assets/videos/game_intro_2022.webm" data-kind="file" aria-label="Play Game Intro 2022">
+              <img src="images/ignition/game_intro_2022.jpg" alt="Game Intro 2022 — neon magenta/cyan">
+              <span class="play">&#9658;</span>
+            </button>
+            <div class="vmeta">
+              <h3>Game Intro — 2022</h3>
+              <p class="sub">Game · <span>2022</span> · <em>neon magenta / cyan</em></p>
+            </div>
+          </article>
+        </div>
+      </section>
+      
+      <!-- Modal -->
+      <div id="video-modal" class="vmodal" aria-hidden="true">
+        <div class="vmodal-inner" role="dialog" aria-modal="true" aria-label="Video player">
+          <button class="vclose" aria-label="Close video">&times;</button>
+          <div class="vplayer" id="vplayer"></div>
+        </div>
+      </div>
+
       <h3>Toolkit</h3>
       <p class="tools">✦ Houdini ✦ After Effects ✦ Film Production</p>
 

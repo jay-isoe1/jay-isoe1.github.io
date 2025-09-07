@@ -4026,37 +4026,22 @@ text-align: justify;
 }
 
 .vthumb {
-  appearance: none;
-  -webkit-appearance: none;
-  border: 0;
-  padding: 0;
-  margin: 0;
-  line-height: 0;
-  
   flex: 0 0 40%;
-  align-self: stretch;    /* 카드 높이만큼 꽉 채움 */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  overflow: hidden;
-  background: #000;
-  cursor: pointer;
+  align-self: stretch;           /* 세로 꽉 채움 */
+  position: relative; overflow: hidden; background: #000;
+  display: block;                /* 레이아웃은 div가 담당 */
 }
-.vthumb img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
+.vthumb img { width:100%; height:100%; object-fit: cover; display:block; }
 
+/* 버튼은 오버레이로 전체 덮기(레이아웃 간섭 X) */
+.vplay {
+  position: absolute; inset: 0;
+  background: transparent; border: 0; padding: 0; cursor: pointer;
+}
 .vthumb .play {
-  position: absolute;
-  bottom: 10px; right: 12px;
-  font-size: 28px;
-  color: rgba(255,255,255,.9);
-  text-shadow: 0 2px 8px rgba(0,0,0,.6);
-  pointer-events: none;
+  position: absolute; right: 12px; bottom: 10px;
+  font-size: 28px; color: rgba(255,255,255,.9);
+  text-shadow: 0 2px 8px rgba(0,0,0,.6); pointer-events: none;
 }
 
 .vmeta {

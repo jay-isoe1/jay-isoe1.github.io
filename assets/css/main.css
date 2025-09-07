@@ -3954,17 +3954,20 @@ text-align: justify;
 }
 
 #photos .thumb {
-  aspect-ratio: 4 / 3;              /* card-ratio */
+  width: 100%;
   overflow: hidden;
 }
 
 #photos .thumb img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;                 /* crop-full */
-	background: hidden;
+  max-width: 100vw;   /* 화면 가로 전체보다 크지 않음 */
+  max-height: 100vh;  /* 화면 세로 전체보다 크지 않음 */
+  width: auto;
+  height: auto;
   display: block;
+  margin: 0 auto;     /* 중앙 정렬 */
+  object-fit: contain;
 }
+
 
 #photos .meta {
   padding: .9rem 1rem 1.1rem;

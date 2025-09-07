@@ -3931,3 +3931,145 @@ text-align: justify;
   color: #eee;
 	left: 0;
 }
+
+
+/* --- Photo cards --- */
+#photos .cards {
+  display: grid;
+  grid-template-columns: repeat( auto-fill, minmax(220px, 1fr) );
+  gap: 1.2rem;
+}
+
+#photos .card {
+  background: var(--bg-alt, #fff);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+
+#photos .card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+}
+
+#photos .thumb {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background: #fff;           /* 흰 배경 */
+  border: 0;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  display: grid;
+  place-items: center;        /* 가운데 정렬 */
+}
+
+#photos .thumb img {
+  max-width: 90%;
+  max-height: 90%;
+  width: auto;
+  height: auto;
+  object-fit: contain;        /* 전체 보이게 */
+  display: block;
+}
+
+/* caption */
+#photos .meta {
+  background: #fff;           /* 흰 배경 유지 */
+  padding: .8rem 1rem 1rem;
+  border-top: 1px solid rgba(0,0,0,.06);
+}
+#photos .meta h3 { margin: 0 0 .25rem; font-size: 1rem; }
+#photos .meta .sub { margin: 0; opacity: .7; font-size: .9rem; }
+
+/* 라이트박스 모달 */
+.img-modal {
+  position: fixed; inset: 0; display: none;
+  background: rgba(0,0,0,.72); z-index: 1000;
+}
+.img-modal.show { display: grid; place-items: center; }
+.img-modal-inner {
+  position: relative;
+  max-width: 95vw; max-height: 92vh;
+  background: #000; border-radius: 10px; overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,.4);
+  padding: 0;
+}
+#img-viewer {
+  max-width: 95vw; max-height: 92vh;
+  width: auto; height: auto; display: block;
+}
+.img-close {
+  position: absolute; top: 8px; right: 10px;
+  width: 38px; height: 38px; border: 0; border-radius: 8px;
+  background: rgba(255,255,255,.12); color: #fff; font-size: 22px; cursor: pointer;
+}
+.img-close:hover { background: rgba(255,255,255,.2); }
+
+/* 다크 테마 카드 배경 보정(흰 배경 유지 원하면 제거 가능) */
+@media (prefers-color-scheme: dark) {
+  #photos .card { background: #111; box-shadow: 0 6px 18px rgba(0,0,0,.5); }
+  /* 썸네일/메타는 흰색 유지로 사진 액자 느낌 */
+}
+
+
+
+/* Video cards */
+#ignition-videos .video-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px,1fr));
+  gap: 1.2rem;
+}
+#ignition-videos .vcard {
+  background: var(--bg-alt, #fff);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,.08);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+#ignition-videos .vcard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0,0,0,.12);
+}
+#ignition-videos .vthumb {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+  padding: 0; border: 0; cursor: pointer; background: transparent;
+}
+#ignition-videos .vthumb img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+}
+#ignition-videos .vthumb .play {
+  position: absolute; inset: 0; display: grid; place-items: center;
+  font-size: 2.8rem; color: #fff; text-shadow: 0 2px 10px rgba(0,0,0,.6);
+  opacity: .9;
+}
+#ignition-videos .vmeta { padding: .85rem 1rem 1rem; }
+#ignition-videos .vmeta h3 { margin: 0 0 .25rem; font-size: 1.05rem; }
+#ignition-videos .vmeta .sub { margin: 0; opacity: .75; font-size: .92rem; }
+
+/* Modal */
+.vmodal {
+  position: fixed; inset: 0; display: none;
+  background: rgba(0,0,0,.72); z-index: 1000;
+}
+.vmodal.show { display: grid; place-items: center; }
+.vmodal-inner {
+  width: min(960px, 92vw);
+  background: #000; border-radius: 10px; overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,.4);
+  position: relative;
+}
+.vplayer { aspect-ratio: 16/9; width: 100%; background: #000; }
+.vclose {
+  position: absolute; top: 8px; right: 10px;
+  background: rgba(255,255,255,.12); color: #fff; border: 0;
+  width: 36px; height: 36px; border-radius: 8px; font-size: 22px; cursor: pointer;
+}
+.vclose:hover { background: rgba(255,255,255,.2); }
+
+@media (prefers-color-scheme: dark) {
+  #ignition-videos .vcard { background: #111; box-shadow: 0 6px 18px rgba(0,0,0,.5); }
+}

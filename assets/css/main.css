@@ -4032,8 +4032,12 @@ text-align: justify;
 
 /* 썸네일: 가로형 비율 유지 */
 .vthumb {
-  flex: 0 0 45%;           /* 카드 너비의 45% 차지 */
-  aspect-ratio: 16 / 9;    /* 항상 가로형 */
+  /* 조절 가능한 썸네일 높이 */
+  --thumb-h: 360px;
+
+  height: var(--thumb-h);
+  aspect-ratio: 6 / 19;      /* width : height = 6 : 19 (세로가 긴 비율) */
+  flex: 0 0 auto;            /* 계산된 폭을 그대로 유지 */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -4042,40 +4046,49 @@ text-align: justify;
   position: relative;
   cursor: pointer;
 }
+
+
 .vthumb img {
   width: 100%;
   height: 100%;
-  object-fit: cover;       /* 꽉 차게 잘라서 가로 비율 유지 */
+  object-fit: contain;
+	display: block;
 }
+
+
 .vthumb .play {
   position: absolute;
-  font-size: 36px;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-size: 28px;
   color: rgba(255,255,255,0.9);
   text-shadow: 0 2px 8px rgba(0,0,0,.6);
+  pointer-events: none;
 }
 
 /* 설명 */
 .vmeta {
-  flex: 1;
+  flex: 1 1 auto;
+  min-width: 0;              /* 긴 텍스트 줄바꿈 허용 */
   padding: 1rem 1.2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-.vmeta h3 { margin: 0 0 0.4rem; font-size: 1.1rem; }
-.vmeta .sub { margin: 0 0 0.6rem; font-size: 0.9rem; color: rgba(0,0,0,.65); }
-.vmeta .desc { margin: 0; font-size: 0.9rem; line-height: 1.45; }
+.vmeta h3 { margin: 0 0 .4rem; font-size: 1.1rem; }
+.vmeta .sub { margin: 0 0 .6rem; font-size: .9rem; color: rgba(0,0,0,.65); }
+.vmeta .desc { margin: 0; font-size: .92rem; line-height: 1.5; }
 
-/* 모바일에서는 세로 배치 */
-@media (max-width: 700px) {
-  .vcard {
-    flex-direction: column;
-  }
-  .vthumb {
-    flex: none;
-    width: 100%;
-  }
+/* 반응형: 작은 화면에서는 세로 스택 & 썸네일 높이 축소 */
+@media (max-width: 800px) {
+  .video-cards { grid-template-columns: 1fr; }
+  .vcard { flex-direction: column; }
+  .vthumb { --thumb-h: 300px; width: 100%; }
 }
+
+@media (max-width: 480px) {
+  .vthumb { --thumb-h: 240px; }
 
 
 /* Modal */

@@ -3807,7 +3807,7 @@ input, select, textarea {
 /* Projects Custom */
 
 .project-block {
-  padding: 0.3em;
+  padding: 0.3em 0.5em;
 }
 
 /* odd : black bg + white font */

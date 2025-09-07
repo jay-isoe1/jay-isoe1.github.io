@@ -3807,7 +3807,7 @@ input, select, textarea {
 /* Projects Custom */
 
 .project-block {
-  padding: 0.5em;
+  padding: 0.3em;
 }
 
 /* odd : black bg + white font */
@@ -3842,7 +3842,7 @@ input, select, textarea {
   display: flex;
   align-items: center;   /* 세로 중앙 정렬 */
   gap: 2em;              /* 이미지와 텍스트 간격 */
-  margin: 2em 0;
+  margin: 1.2em 0;
 }
 
 .preview-flex img {

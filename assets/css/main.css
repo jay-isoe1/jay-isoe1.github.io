@@ -4021,27 +4021,47 @@ text-align: justify;
   gap: 1.5rem;
 }
 
+/* 카드 전체는 그대로 */
 .vcard {
-  align-items: stretch;  /* 양쪽 컬럼 높이 동일 */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,.08);
 }
 
+/* 썸네일 박스 */
 .vthumb {
-  flex: 0 0 40%;
-  align-self: stretch;           /* 세로 꽉 채움 */
-  position: relative; overflow: hidden; background: #000;
-  display: block;                /* 레이아웃은 div가 담당 */
+  flex: 0 0 40%;           /* 카드에서 차지하는 가로 비율 */
+  aspect-ratio: 6 / 19;    /* ★ 세로형 비율로 고정 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  border: 0;
+  background: #000;
+  cursor: pointer;
 }
-.vthumb img { width:100%; height:100%; object-fit: cover; display:block; }
 
-/* 버튼은 오버레이로 전체 덮기(레이아웃 간섭 X) */
-.vplay {
-  position: absolute; inset: 0;
-  background: transparent; border: 0; padding: 0; cursor: pointer;
+/* 이미지 */
+.vthumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;       /* 꽉 채우기. 잘림 허용 */
+  display: block;
 }
+
+/* 플레이 아이콘 */
 .vthumb .play {
-  position: absolute; right: 12px; bottom: 10px;
-  font-size: 28px; color: rgba(255,255,255,.9);
-  text-shadow: 0 2px 8px rgba(0,0,0,.6); pointer-events: none;
+  position: absolute;
+  bottom: 10px; right: 12px;
+  font-size: 28px;
+  color: rgba(255,255,255,.9);
+  text-shadow: 0 2px 8px rgba(0,0,0,.6);
+  pointer-events: none;
 }
 
 .vmeta {

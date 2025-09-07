@@ -4026,14 +4026,28 @@ text-align: justify;
 }
 
 .vthumb {
-  flex: 0 0 40%;       /* 가로 비율 */
-  height: auto;        /* 자동 */
+  appearance: none;
+  -webkit-appearance: none;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  line-height: 0;
+  
+  flex: 0 0 40%;
+  align-self: stretch;    /* 카드 높이만큼 꽉 채움 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background: #000;
+  cursor: pointer;
 }
-
 .vthumb img {
   width: 100%;
   height: 100%;
-  object-fit: cover;   /* 꽉 채우기 */
+  object-fit: cover;
+  display: block;
 }
 
 .vthumb .play {

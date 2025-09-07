@@ -3841,7 +3841,7 @@ input, select, textarea {
 .preview-flex {
   display: flex;
   align-items: center;   /* 세로 중앙 정렬 */
-  gap: 2em;              /* 이미지와 텍스트 간격 */
+  gap: 1.5em;              /* 이미지와 텍스트 간격 */
   margin: 1.2em 0;
 }
 

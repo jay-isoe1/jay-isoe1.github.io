@@ -31,10 +31,9 @@
         <div class="video-cards">
           <!-- 예시 1: 로컬 파일 -->
           <article class="vcard" data-type="Film" data-year="2021" data-color="blue">
-            <button class="vthumb" data-src="assets/videos/film_reel_2021.mp4" data-kind="file" aria-label="Play Film Reel 2021">
-              <img src="images/ignition-film-thumb.png" alt="Film Reel 2021 — reinterpretation of Black Swan in blue tones" loading = "lazy">
-              <span class="play" aria-hidden = "true">&#9658;</span>
-            </button>
+            <div class = "vthumb">
+              <img src="images/ignition-film-thumb.png" alt="..." loading="lazy">
+            </div>
             <div class="vmeta">
               <h3>Film Reel — 2021</h3>
               <p class="sub">Filmmaking · <span>2021</span> · <em>blue grading</em></p>
@@ -43,31 +42,38 @@
               characters’ inner world. The cool, desaturated palette evokes feelings of isolation, suppressed desire, and
               fragile calm—suggesting a psychological space where beauty and anxiety coexist.
               </p>
+
+              <button class="vplay" type="button" aria-label="Play Film Reel 2021">
+                <span class="play" aria-hidden = "true">&#9658;</span>
+              </button>
             </div>
           </article>
       
           <!-- 예시 2: 유튜브 링크 -->
           <article class="vcard" data-type="Advertising" data-year="2021" data-color="amber, indigo">
-            <button class="vthumb" data-src="https://www.youtube.com/embed/VIDEO_ID?autoplay=1" data-kind="yt" aria-label="Play Ad Spot 2020">
-              <img src="images/ignition/ad_spot_2021.jpg" alt="Advertising Spot 2021 — red branding">
-              <span class="play">&#9658;</span>
-            </button>
+            <div class = "vthumb">
+              <img src="images/ignition-ad-thumb.png" alt="Advertising Spot 2021 — red branding">
+            </div>
             <div class="vmeta">
               <h3>Ad Spot — 2021</h3>
               <p class="sub">Advertising Video · <span>2021</span> · <em>red branding</em></p>
               <p class="desc">
               A lipstick campaign that highlights the brand’s unmistakable identity through its iconic red.
               The bold palette reinforces passion, confidence, and timeless allure—anchoring the product
-              firmly within the brand’s signature color universe.            
+              firmly within the brand’s signature color universe.       
+              </p>
+              
+              <button class="vplay" type="button" aria-label="Play Ad Spot 2021">
+                <span class="play">&#9658;</span>
+              </button>
             </div>
           </article>
       
           <!-- 예시 3: 게임 인트로 -->
           <article class="vcard" data-type="Game Intro" data-year="2021" data-color="neon magenta, cyan">
-            <button class="vthumb" data-src="assets/videos/game_intro_2021.webm" data-kind="file" aria-label="Play Game Intro 2021">
+            <div class = "vthumb">
               <img src="images/ignition-game-thumb.png" alt="Game Intro 2021 — destroyed ash gray">
-              <span class="play">&#9658;</span>
-            </button>
+            </div>
             <div class="vmeta">
               <h3>Game Intro — 2021</h3>
               <p class="sub">Game · <span>2021</span> · <em></em>green / white / blue / ash gray</p>
@@ -76,6 +82,11 @@
               blue weave a dreamlike fantasy, while ash-gray undertones suggest ruin and desolation.  
               The interplay of luminous color and muted decay evokes a haunting beauty—inviting players
               into a realm where collapse and wonder coexist.
+              </p>
+              
+              <button class="vplay" type="button" aria-label="Game Intro 2021 — destroyed ash gray">
+                <span class="play">&#9658;</span>
+              </button>
             </div>
           </article>
         </div>

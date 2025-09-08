@@ -4075,6 +4075,7 @@ text-align: justify;
   min-width: 0;
   padding: 1rem 1.2rem;
   display: flex;
+	margin-top: 1rem;
   flex-direction: column;
   justify-content: center;
 }

@@ -4056,7 +4056,7 @@ text-align: justify;
   align-self: flex-start;       /* 가운데 정렬(원하면 stretch로 바꿔 가로 꽉) */
   display: inline-flex;
   align-items: center;
-  gap: .4rem;
+  gap: .8rem;
   padding: 6px 12px;
   border-radius: 9999px;
   border: 1px solid #e5e7eb;

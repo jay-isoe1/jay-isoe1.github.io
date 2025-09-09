@@ -4042,6 +4042,10 @@ text-align: justify;
   border: 0;
 }
 
+.dashboard-card .vthumb {
+  flex: 0 0 40% !important;
+}
+
 /* 3) 이미지는 가로 꽉, 세로 자동 */
 .vthumb img {
   width: 100%;
@@ -4076,7 +4080,7 @@ text-align: justify;
   min-width: 0;
   padding: 1rem 1.2rem;
   display: flex;
-	margin-top: 1rem;
+	margin-top: 0rem;
   flex-direction: column;
   justify-content: center;
 }
@@ -4115,3 +4119,18 @@ text-align: justify;
 @media (prefers-color-scheme: dark) {
   #ignition-videos .vcard { background: #111; box-shadow: 0 6px 18px rgba(0,0,0,.5); }
 }
+
+
+/* ascent dashboard */
+.dashboard-desc {
+  margin: 1rem 0;
+  padding: 1rem 1.2rem;
+  background: #fafafa;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  line-height: 1.6;
+}
+.dashboard-desc ul li {
+  margin: .4rem 0;
+}
+

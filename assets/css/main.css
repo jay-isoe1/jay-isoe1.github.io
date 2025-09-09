@@ -4043,7 +4043,7 @@ text-align: justify;
 }
 
 .dashboard-card .vthumb {
-  flex: 0 0 40% !important;
+  flex: 0 0 30%;
 }
 
 /* 3) 이미지는 가로 꽉, 세로 자동 */

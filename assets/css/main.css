@@ -4034,7 +4034,7 @@ text-align: justify;
 
 /* 2) 썸네일은 내용 높이에 맞춤 (세로 비율 강제 제거) */
 .vthumb {
-  flex: 0 0 20%;
+  flex: 0 0 30%;
   display: flex;
   flex-direction: column;   /* 이미지 위, 버튼 아래 */
   gap: 8px;                 /* 이미지-버튼 간격 */

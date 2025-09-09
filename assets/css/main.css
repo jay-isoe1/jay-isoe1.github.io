@@ -4115,3 +4115,18 @@ text-align: justify;
 @media (prefers-color-scheme: dark) {
   #ignition-videos .vcard { background: #111; box-shadow: 0 6px 18px rgba(0,0,0,.5); }
 }
+
+
+/* ascent dashboard */
+.dashboard-desc {
+  margin: 1rem 0;
+  padding: 1rem 1.2rem;
+  background: #fafafa;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  line-height: 1.6;
+}
+.dashboard-desc ul li {
+  margin: .4rem 0;
+}
+

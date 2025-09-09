@@ -4042,6 +4042,10 @@ text-align: justify;
   border: 0;
 }
 
+.dashboard-card .vthumb {
+  flex: 0 0 40%;
+}
+
 /* 3) 이미지는 가로 꽉, 세로 자동 */
 .vthumb img {
   width: 100%;

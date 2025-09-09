@@ -4128,7 +4128,7 @@ text-align: justify;
   border: 1px solid #e5e7eb;
   border-radius: 8px;
   line-height: 1.6;
-  font-size: 0.92rem;   /* 글자 크기 줄임 */
+  font-size: 0.95rem;   /* 글자 크기 줄임 */
   color: rgba(0,0,0,0.85); /* 조금 더 은은한 색상 */
 }
 

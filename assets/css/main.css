@@ -4043,7 +4043,7 @@ text-align: justify;
 }
 
 .dashboard-card .vthumb {
-  flex: 0 0 40% !important;
+  flex: 0 0 30%;
 }
 
 /* 3) 이미지는 가로 꽉, 세로 자동 */
@@ -4121,16 +4121,23 @@ text-align: justify;
 }
 
 
-/* ascent dashboard */
 .dashboard-desc {
-  margin: 1rem 0;
+  margin: 1rem 0 2rem;
   padding: 1rem 1.2rem;
   background: #fafafa;
   border: 1px solid #e5e7eb;
   border-radius: 8px;
   line-height: 1.6;
+  font-size: 0.95rem;   /* 글자 크기 줄임 */
+  color: rgba(0,0,0,0.85); /* 조금 더 은은한 색상 */
 }
-.dashboard-desc ul li {
-  margin: .4rem 0;
+
+.dashboard-desc .dashbullets li {
+  font-size: 0.9rem;   /* 리스트 항목은 더 작게 */
+}
+
+.dashboard-desc .note {
+  font-size: 0.85rem;  /* interpretation note는 가장 작게 */
+  color: rgba(0,0,0,0.7);
 }
 

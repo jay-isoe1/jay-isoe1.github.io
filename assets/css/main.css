@@ -102,12 +102,12 @@ input, select, textarea {
 		  background-color: #2f2f2f; /* fallback 단색 (어두운 그레이) */
 		
 		  /* Fallbacks for older browsers (prefixes first) */
-		  background-image: -moz-linear-gradient(45deg, #2f2f2f 15%, #2a5687 85%);
-		  background-image: -webkit-linear-gradient(45deg, #2f2f2f 15%, #2a5687 85%);
-		  background-image: -ms-linear-gradient(45deg, #2f2f2f 15%, #2a5687 85%);
+		  background-image: -moz-linear-gradient(45deg, #2f2f2f  15%, #20456d 85%);
+		  background-image: -webkit-linear-gradient(45deg, #2f2f2f 15%, #20456d 85%);
+		  background-image: -ms-linear-gradient(45deg, #2f2f2f 15%, #20456d 85%);
 		
 		  /* Standard (modern browsers) */
-		  background-image: linear-gradient(45deg, #2f2f2f 15%, #2a5687 85%);
+		  background-image: linear-gradient(45deg, #2f2f2f 15%, #20456d 85%);
 		}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {

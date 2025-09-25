@@ -3932,7 +3932,7 @@ text-align: justify;
 .pubs li::before {
   content: "✦";          /* ✦, ✧, ☆, ★ */
   position: absolute;
-  color: #eee;
+  color: #666;
 	left: 0;
 }
 

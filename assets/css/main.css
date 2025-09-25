@@ -4132,7 +4132,7 @@ text-align: justify;
   border-radius: 8px;
   line-height: 1.6;
   font-size: 0.95rem;   /* 글자 크기 줄임 */
-  color: rgba(0,0,0,0.9); /* 조금 더 은은한 색상 */
+  color: #000000; /* 조금 더 은은한 색상 */
 }
 
 .dashboard-desc .dashbullets li {
@@ -4141,6 +4141,6 @@ text-align: justify;
 
 .dashboard-desc .note {
   font-size: 0.85rem;  /* interpretation note는 가장 작게 */
-  color: rgba(0,0,0,0.9);
+  color: #000000;
 }
 

@@ -3484,13 +3484,13 @@ input, select, textarea {
 		}
 
 			#main select option {
-				color: #333333;
+				color: #000000;
 				background: #ffffff;
 			}
 
 		#main input[type="checkbox"] + label,
 		#main input[type="radio"] + label {
-			color: #333333;
+			color: #000000;
 		}
 
 			#main input[type="checkbox"] + label:before,
@@ -3558,7 +3558,7 @@ input, select, textarea {
 		}
 
 		#main dl dt {
-			color: #333333;
+			color: #000000;
 		}
 
 		#main header.major h2:after {

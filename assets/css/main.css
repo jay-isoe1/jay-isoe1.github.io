@@ -3098,6 +3098,7 @@ input, select, textarea {
 		#header p {
 			font-size: 1.25em;
 			letter-spacing: -0.025em;
+			color: #ffffff;
 		}
 
 		#header.alt {

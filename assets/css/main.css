@@ -3915,7 +3915,7 @@ text-align: justify;
 
 /* ascent */
 .ascent .description strong {
-  color: #333333 !important;  ← 살짝 부드러운 진회색 원하면 이 줄로 */
+  color: #333333 !important;
 }
 
 /* publications */

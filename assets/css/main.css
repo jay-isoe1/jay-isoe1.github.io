@@ -3932,7 +3932,7 @@ text-align: justify;
 .pubs li::before {
   content: "✦";          /* ✦, ✧, ☆, ★ */
   position: absolute;
-  color: #666;
+  color: #000;
 	left: 0;
 }
 
@@ -4014,7 +4014,6 @@ text-align: justify;
 /* 다크 테마 카드 배경 보정(흰 배경 유지 원하면 제거 가능) */
 @media (prefers-color-scheme: dark) {
   #photos .card { background: #111; box-shadow: 0 6px 18px rgba(0,0,0,.5); }
-  /* 썸네일/메타는 흰색 유지로 사진 액자 느낌 */
 }
 
 /* Ignition */
@@ -4029,7 +4028,7 @@ text-align: justify;
 .vcard {
   display: flex;
   flex-direction: row;
-  align-items: flex-start; /* ← stretch에서 flex-start로 */
+  align-items: flex-start;
   background: #fff;
   border-radius: 12px;
   overflow: hidden;
@@ -4060,8 +4059,8 @@ text-align: justify;
 
 /* 4) 플레이 버튼은 일반 흐름(아래) + 스타일 */
 .vplay {
-  position: static;         /* absolute 해제: 썸네일 아래로 */
-  align-self: flex-start;       /* 가운데 정렬(원하면 stretch로 바꿔 가로 꽉) */
+  position: static; 
+  align-self: flex-start; 
   display: inline-flex;
   align-items: center;
   gap: .8rem;
@@ -4097,7 +4096,7 @@ text-align: justify;
   .video-cards { grid-template-columns: 1fr; }
   .vcard { flex-direction: column; }
   .vthumb { flex-basis: auto; width: 100%; }
-  .vthumb img { height: auto; } /* 세로 스택 시 원본비율 */
+  .vthumb img { height: auto; }
 }
 
 /* Modal */

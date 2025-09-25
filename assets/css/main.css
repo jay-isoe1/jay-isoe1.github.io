@@ -3915,7 +3915,7 @@ text-align: justify;
 
 /* ascent */
 .ascent .description strong {
-  color: #2b2b2b !important;  ← 살짝 부드러운 진회색 원하면 이 줄로 */
+  color: #333333 !important;  ← 살짝 부드러운 진회색 원하면 이 줄로 */
 }
 
 /* publications */
@@ -3926,7 +3926,7 @@ text-align: justify;
 
 .pubs li {
   position: relative;
-  padding-left: 1.2em;   /* ✦ 마커가 들어갈 자리 확보 */
+  padding-left: 1.2em;
 }
 
 .pubs li::before {
@@ -4133,7 +4133,7 @@ text-align: justify;
   border-radius: 8px;
   line-height: 1.6;
   font-size: 0.95rem;   /* 글자 크기 줄임 */
-  color: rgba(0,0,0,0.85); /* 조금 더 은은한 색상 */
+  color: rgba(0,0,0,0.9); /* 조금 더 은은한 색상 */
 }
 
 .dashboard-desc .dashbullets li {
@@ -4142,6 +4142,6 @@ text-align: justify;
 
 .dashboard-desc .note {
   font-size: 0.85rem;  /* interpretation note는 가장 작게 */
-  color: rgba(0,0,0,0.7);
+  color: rgba(0,0,0,0.9);
 }
 

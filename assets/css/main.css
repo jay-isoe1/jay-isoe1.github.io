@@ -3356,19 +3356,19 @@ input, select, textarea {
 	}
 
 		#main input, #main select, #main textarea {
-			color: #636363;
+			color: #333333;
 		}
 
 		#main a:hover {
-			color: #636363;
+			color: #333333;
 		}
 
 		#main strong, #main b {
-			color: #636363;
+			color: #333333;
 		}
 
 		#main h1, #main h2, #main h3, #main h4, #main h5, #main h6 {
-			color: #636363;
+			color: #333333;
 		}
 
 		#main blockquote {

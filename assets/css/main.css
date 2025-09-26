@@ -4133,16 +4133,16 @@ text-align: justify;
   border: 1px solid #e5e7eb;
   border-radius: 8px;
   line-height: 1.6;
-  font-size: 0.95rem;   /* 글자 크기 줄임 */
-  color: #000000; /* 조금 더 은은한 색상 */
+  font-size: 1rem;
+  color: #000000;
 }
 
 .dashboard-desc .dashbullets li {
-  font-size: 0.9rem;   /* 리스트 항목은 더 작게 */
+  font-size: 1rem;   /* 리스트 항목은 더 작게 */
 }
 
 .dashboard-desc .note {
-  font-size: 0.85rem;  /* interpretation note는 가장 작게 */
+  font-size: 1rem;  /* interpretation note는 가장 작게 */
   color: #000000;
 }
 

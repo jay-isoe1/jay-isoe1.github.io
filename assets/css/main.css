@@ -3281,7 +3281,6 @@ input, select, textarea {
 			margin: 0;
 			padding: 0;
 			list-style: none;
-			color: #000000 !important;
 		}
 
 			#nav ul li {
@@ -3308,6 +3307,7 @@ input, select, textarea {
 					border: none;
 					border-radius: 8px;
 					box-shadow: inset 0 0 0 1px transparent;
+					color: #000000 !important;
 				}
 
 					#nav ul li a:hover {

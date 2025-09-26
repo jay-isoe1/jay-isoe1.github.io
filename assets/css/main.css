@@ -3717,6 +3717,10 @@ input, select, textarea {
 			color: #ffffff !important;
 		}
 
+		#footer section{
+			color: #ffffff !important;
+		}
+
 		#footer > * {
 			width: 100%
 			margin-left: 2em;

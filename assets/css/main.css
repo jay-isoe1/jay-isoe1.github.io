@@ -3281,6 +3281,7 @@ input, select, textarea {
 			margin: 0;
 			padding: 0;
 			list-style: none;
+			color: #000000;
 		}
 
 			#nav ul li {

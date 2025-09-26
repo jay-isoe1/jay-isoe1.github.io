@@ -3713,6 +3713,10 @@ input, select, textarea {
 		margin: 0 0 3em -2em;
 	}
 
+		#footer ul li a {
+			color: #ffffff !important;
+		}
+
 		#footer > * {
 			width: 100%
 			margin-left: 2em;

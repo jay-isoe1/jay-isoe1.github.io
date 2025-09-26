@@ -2443,6 +2443,13 @@ input, select, textarea {
 			padding-left: 0.5em;
 		}
 
+		ul.features li .image img{
+			width: 40%;
+			height: auto;
+			display: block;
+			margin: 0 auto;
+		}
+
 		ul.alt {
 			list-style: none;
 			padding-left: 0;

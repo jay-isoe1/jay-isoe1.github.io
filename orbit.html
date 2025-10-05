@@ -6,6 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
   <link rel="stylesheet" href="assets/css/main.css" />
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(','\\)'], ['$', '$']], displayMath: [['\\[','\\]']] },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 </head>
 <body class="is-preload">
 <div id="wrapper">
@@ -37,8 +44,7 @@
           </p>
         </div>
       </a>
-      
-      <!-- 카드 바깥 설명 박스 -->
+
       <div class="dashboard-desc">
         <p>
           This project demonstrates how <b>mathematical algorithms</b> and 
@@ -54,6 +60,69 @@
           <li>✦ <b>Effect:</b> Emergent motion perception from static images</li>
           <li>✦ <b>Interaction:</b> Live demo linked above</li>
         </ul>
+
+        <details class="explain-card" id="explainCard">
+          <summary>
+            <span class="dot"></span>
+            Explanation
+          </summary>
+          <div class="explain-body">
+            <h3>1) Layout &amp; Math</h3>
+            <p>\[
+              \theta_i = i\,\Delta\theta,\quad
+              r_i = r_{\text{start}} + i\,\Delta r,\quad
+              x_i = x_c + r_i\cos\theta_i,\quad
+              y_i = y_c + r_i\sin\theta_i.
+            \]</p>
+            <p>\[
+              \theta_i^{(\mathrm{golden})} = i \cdot 137.5^\circ,\quad
+              r_i^{(\mathrm{golden})} = r_{\text{start}} + 1.5\,i
+            \]</p>
+            <p>\[
+              \mathrm{dir}_i=\begin{cases}+1&i\ \text{even}\\-1&i\ \text{odd}\end{cases},\quad
+              \theta_i^{(\mathrm{double})}=i\,\Delta\theta\,\mathrm{dir}_i
+            \]</p>
+      
+            <h3>2) Wave Layout</h3>
+            <p>\[
+              k=\frac{2\pi\cdot 4}{\text{cols}},\quad
+              y_{\text{offset}}=A\sin(k\cdot \text{col})
+            \]</p>
+      
+            <h3>3) Lightness Mapping</h3>
+            <p>\[
+              t=\frac{\text{col}}{\text{cols}-1},\quad
+              L=
+              \begin{cases}
+                30 & t<0.25\\
+                50 & 0.25\le t<0.50\\
+                70 & 0.50\le t<0.75\\
+                90 & 0.75\le t\le 1
+              \end{cases}
+            \]</p>
+      
+            <h3>4) Shadow Phase &amp; Flip</h3>
+            <p>\[
+              \text{shadowShiftPhase} \leftarrow
+              \mathrm{lerp}(\text{shadowShiftPhase},\ \pm 1,\ \text{shadowShiftSpeed})
+            \]</p>
+            <p>Flips polarity when <code>fadeDirection</code> reverses.</p>
+      
+            <h3>5) Layout + Shadow Modes</h3>
+            <p>
+              <strong>Layout</strong> (<code>spiralModeIndex</code>) decides positions (Linear, Golden, Double, Wave).
+              <br><strong>Shadow</strong> (<code>shadowModeIndex</code>) decides black/white sides
+              (Horizontal, Angular, Rotation-based, Eye-based, Wave).
+            </p>
+            <ul>
+              <li><strong>Wave + Wave:</strong> synchronized shadows → smooth flow.</li>
+              <li><strong>Wave + Horizontal:</strong> horizontal stripes across wavy layout.</li>
+              <li><strong>Linear + Angular:</strong> radial flips by polar angle.</li>
+            </ul>
+            <p><em>Tip:</em> Pair Wave layout with Wave shadow for the cleanest illusion.</p>
+          </div>
+        </details>
+      </div>
       
         <p class="note">
           <b>Interpretation note:</b> This visualization is exploratory; 

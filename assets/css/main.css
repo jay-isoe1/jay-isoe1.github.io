@@ -4208,7 +4208,7 @@ details.explain-card:not([open]) .explain-body { display: none; }
 .hamburger{
   position:fixed; top:16px; right:16px; z-index:11002;
   width:44px; height:44px; border-radius:10px;
-  border:1px solid rgba(0,0,0,.12); background:rgba(255,255,255,.85);
+  border:1px solid rgba(0,0,0,.12); background:transparent;
   backdrop-filter: blur(8px);
   display:grid; place-items:center; padding:0; cursor:pointer;
 }

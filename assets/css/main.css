@@ -4163,6 +4163,7 @@ details.explain-card {
   background: rgba(255,255,255,.75);
   box-shadow: 0 6px 18px rgba(0,0,0,.08);
   overflow: hidden;
+ margin-bottom: 1.5em;
 }
 
 details.explain-card summary {
@@ -4193,7 +4194,6 @@ details.explain-card:not([open]) .explain-body { display: none; }
 .explain-body mjx-container[jax="CHTML"] {
   overflow-x: auto; overflow-y: hidden; padding-bottom: 2px;
 }
-
 
 .dashboard-desc .dashbullets li {
   font-size: 1rem;

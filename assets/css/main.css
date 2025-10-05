@@ -4208,12 +4208,18 @@ details.explain-card:not([open]) .explain-body { display: none; }
 .hamburger{
   position:fixed; top:16px; right:16px; z-index:11002;
   width:44px; height:44px; border-radius:10px;
-  border:1px solid rgba(0,0,0,.12); background:transparent;
+  border:none !important;
+background:transparent !important;
   backdrop-filter: blur(8px);
   display:grid; place-items:center; padding:0; cursor:pointer;
 }
 .hamburger div{ 
-	display:block; width:22px; height:2px; background:#fff; margin:3px 0; transition:transform .2s, opacity .2s; 
+	display:block !important;
+	width:22px !important;
+	height:2px !important;
+	background:#fff !important;
+	margin:3px 0 !important;
+	transition:transform .2s, opacity .2s !important;
 }
 .hamburger[aria-expanded="true"] div:nth-child(1){
 	transform: translateY(5px) rotate(45deg); 

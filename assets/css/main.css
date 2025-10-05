@@ -4205,7 +4205,6 @@ details.explain-card:not([open]) .explain-body { display: none; }
 
 
 	
-/* 햄버거 버튼 */
 .hamburger{
   position:fixed; top:16px; right:16px; z-index:11002;
   width:44px; height:44px; border-radius:10px;
@@ -4218,7 +4217,6 @@ details.explain-card:not([open]) .explain-body { display: none; }
 .hamburger[aria-expanded="true"] span:nth-child(2){ opacity:0; }
 .hamburger[aria-expanded="true"] span:nth-child(3){ transform: translateY(-5px) rotate(-45deg); }
 
-/* 드로어 */
 .drawer{
   position:fixed; top:0; right:0; height:100%; width:min(84vw, 320px);
   background:#fff; box-shadow:-20px 0 30px rgba(0,0,0,.15);
@@ -4232,16 +4230,15 @@ details.explain-card:not([open]) .explain-body { display: none; }
 .drawer__list a{ display:block; padding:12px 14px; border-radius:8px; color:#111; text-decoration:none; }
 .drawer__list a:hover{ background: rgba(0,0,0,.05); }
 
-/* Work 아코디언 */
 .has-sub .submenu{ display:none; list-style:none; margin:6px 0 0 0; padding-left:12px; }
 .has-sub.open .submenu{ display:block; }
 .submenu-toggle{ width:100%; text-align:left; padding:12px 14px; border:0; background:transparent; cursor:pointer; border-radius:8px; }
 .submenu-toggle:hover{ background: rgba(0,0,0,.05); }
 
-/* 오버레이 */
+
 .drawer__overlay{ position:fixed; inset:0; background:rgba(0,0,0,.25); z-index:11000; }
 
-/* 드로어 열렸을 때 기존 #nav 살짝 흐리게(선택) */
+
 body.drawer-open #nav{ opacity:.25; pointer-events:none; }
 
 /* 모바일에서도/데스크톱에서도 항상 햄버거 보이게 (원하면 조정)

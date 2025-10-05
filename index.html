@@ -154,6 +154,7 @@
 					<footer id="footer">
 						<section>
 							<h2>Contact</h2>
+							<dl>
 								<dt>Address</dt>
 								<dd>345, Songpa-dearo, Songpa-gu, Seoul, Korea</dd>
 								<dt>Phone</dt>
@@ -190,26 +191,26 @@
 		  const submenuBtn = document.querySelector('.submenu-toggle');
 		  const hasSub = document.querySelector('.has-sub');
 		
+		  if (!btn || !drawer || !overlay) return;
+		
 		  function openDrawer(){
-			drawer.classList.add('open');
-			drawer.setAttribute('aria-hidden','false');
-			btn.setAttribute('aria-expanded','true');
-			overlay.hidden = false;
-			document.body.classList.add('drawer-open');
-			// 포커스 이동
-			const first = drawer.querySelector('a,button');
-			if(first) first.focus();
-			// 배경 스크롤 방지(선택)
-			document.body.style.overflow = 'hidden';
+		    drawer.classList.add('open');
+		    drawer.setAttribute('aria-hidden','false');
+		    btn.setAttribute('aria-expanded','true');
+		    overlay.hidden = false;
+		    document.body.classList.add('drawer-open');
+		    const first = drawer.querySelector('a,button');
+		    if (first) first.focus();
+		    document.body.style.overflow = 'hidden'; // 배경 스크롤 방지(선택)
 		  }
 		  function closeDrawer(){
-			drawer.classList.remove('open');
-			drawer.setAttribute('aria-hidden','true');
-			btn.setAttribute('aria-expanded','false');
-			overlay.hidden = true;
-			document.body.classList.remove('drawer-open');
-			btn.focus();
-			document.body.style.overflow = '';
+		    drawer.classList.remove('open');
+		    drawer.setAttribute('aria-hidden','true');
+		    btn.setAttribute('aria-expanded','false');
+		    overlay.hidden = true;
+		    document.body.classList.remove('drawer-open');
+		    btn.focus();
+		    document.body.style.overflow = '';
 		  }
 		
 		  btn.addEventListener('click', () => (drawer.classList.contains('open') ? closeDrawer() : openDrawer()));
@@ -217,21 +218,18 @@
 		  if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
 		  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && drawer.classList.contains('open')) closeDrawer(); });
 		
-		  // Work 아코디언
 		  if (submenuBtn && hasSub) {
-			submenuBtn.addEventListener('click', () => {
-			  const expanded = submenuBtn.getAttribute('aria-expanded') === 'true';
-			  submenuBtn.setAttribute('aria-expanded', String(!expanded));
-			  hasSub.classList.toggle('open');
-			});
+		    submenuBtn.addEventListener('click', () => {
+		      const expanded = submenuBtn.getAttribute('aria-expanded') === 'true';
+		      submenuBtn.setAttribute('aria-expanded', String(!expanded));
+		      hasSub.classList.toggle('open');
+		    });
 		  }
 		
-		  // 같은 페이지 내 앵커 클릭 시 닫기
 		  drawer.addEventListener('click', (e) => {
-			const a = e.target.closest('a[href]');
-			if (!a) return;
-			const url = new URL(a.href, window.location.href);
-			if (url.hash && url.pathname === window.location.pathname) closeDrawer();
+		    const a = e.target.closest('a[href]');
+		    if (!a) return;
+		    closeDrawer();
 		  });
 		})();
 		</script>

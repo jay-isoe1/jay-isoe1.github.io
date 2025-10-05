@@ -168,14 +168,53 @@
           <li>✦ <b>Effect:</b> Transformation of fixed forms into dynamic perceptual flows</li>
           <li>✦ <b>Interaction:</b> Live demo linked above</li>
         </ul>
+
+        <details class="explain-card" id="pumpkinExplain">
+          <summary>
+            &gt; Explanation
+          </summary>
+          <div class="explain-body">
+            <h3>1) Mask → Binary</h3>
+            <p>\[
+              M(x,y)=
+              \begin{cases}
+                1 & \text{if } \max(r,g,b)<\tau\\
+                0 & \text{otherwise}
+              \end{cases}
+            \]</p>
       
+            <h3>2) Connected Components</h3>
+            <p>\[
+              (\bar x,\bar y)=\left(\frac{1}{n}\sum x,\ \frac{1}{n}\sum y\right)
+            \]</p>
+      
+            <h3>3) Placement Modes</h3>
+            <ul>
+              <li>Label centers: one glyph per region.</li>
+              <li>Dense sampling: Poisson-disk–like with min-dist \(d_{\min}\).</li>
+            </ul>
+      
+            <h3>4) Orientation</h3>
+            <p>\[
+              \theta = \operatorname{atan2}(y-y_c,\,x-x_c)
+            \]</p>
+      
+            <h3>5) Shadow Phase</h3>
+            <p>\[
+              s(\varphi)=\tfrac{1}{2}\bigl(1+\cos\varphi\bigr)
+            \]</p>
+      
+            <h3>6) Size &amp; Color</h3>
+            <p>Glyph size ∝ area, color in LAB space: \(L=\mathrm{lerp}(L_c,L_e)\).</p>
+          </div>
+        </details>
+        
         <p class="note">
           <b>Interpretation note:</b> This visualization is exploratory; 
           it illustrates illusory motion triggered by alternating background phases, not actual movement or physical causation.
         </p>
       </div>
 
-        
       <h3>Toolkit</h3>
       <p class="tools">✦ Processing (Java) ✦ Unity</p>
     </section>

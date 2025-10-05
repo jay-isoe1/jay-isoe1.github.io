@@ -13,7 +13,6 @@
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="is-preload">
-
 		<!-- Wrapper -->
 			<div id="wrapper">
 
@@ -22,6 +21,38 @@
 						<h1>Jay</h1>
 						<p>Computational Design · Computational Social Science · Visualization · HCI</p>
 					</header>
+
+				<button id="hamburger" class="hamburger" aria-label="Open navigation" aria-expanded="false" aria-controls="site-drawer">
+				  <span></span><span></span><span></span>
+				</button>
+				
+				<!-- 슬라이드 드로어 -->
+				<nav id="site-drawer" class="drawer" aria-hidden="true">
+				  <div class="drawer__header">
+					<strong>Navigate</strong>
+					<button id="drawerClose" class="drawer__close" aria-label="Close navigation">×</button>
+				  </div>
+				
+				  <ul class="drawer__list">
+					<li><a href="index.html">Home</a></li>
+				
+					<!-- Work (아코디언) -->
+					<li class="has-sub">
+					  <button class="submenu-toggle" aria-expanded="false">Work ▾</button>
+					  <ul class="submenu">
+						<li><a href="ignition.html">Ignition</a></li>
+						<li><a href="ascent.html">Ascent</a></li>
+						<li><a href="orbit.html">Orbit</a></li>
+					  </ul>
+					</li>
+				
+					<li><a href="publications.html">Publications</a></li>
+					<li><a href="hobbies.html">Hobbies</a></li>
+				  </ul>
+				</nav>
+				
+				<!-- 배경 오버레이 -->
+				<div id="drawerOverlay" class="drawer__overlay" hidden></div>
 
 				<!-- Nav -->
 					<nav id="nav">

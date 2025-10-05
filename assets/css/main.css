@@ -4155,12 +4155,56 @@ text-align: justify;
   color: #000000;
 }
 
-.dashboard-desc .dashbullets li {
-  font-size: 1rem;   /* 리스트 항목은 더 작게 */
+details.explain-card {
+  width: 100%;
+  margin-top: 12px;
+  border: 1px solid rgba(0,0,0,.12);
+  border-radius: 12px;
+  background: rgba(255,255,255,.75);
+  box-shadow: 0 6px 18px rgba(0,0,0,.08);
+  overflow: hidden;
 }
 
+details.explain-card summary {
+  display: flex; align-items: center; gap: 8px;
+  cursor: pointer; padding: 10px 14px;
+  font-weight: 600;
+  background: linear-gradient(180deg, rgba(255,255,255,.55), rgba(255,255,255,.35));
+  list-style: none;
+  user-select: none;
+}
+details.explain-card summary::-webkit-details-marker { display: none; }
+details.explain-card summary::after {
+  content: '▾';
+  margin-left: auto;
+  transition: transform .2s ease;
+}
+details.explain-card[open] summary::after { transform: rotate(180deg); }
+
+.dot {
+  width: 8px; height: 8px; border-radius: 999px;
+  background: #111; opacity: .65;
+}
+
+.explain-body {
+  padding: 12px 14px 14px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  background: rgba(255,255,255,.6);
+}
+details.explain-card:not([open]) .explain-body { display: none; }
+
+.explain-body mjx-container[jax="SVG"],
+.explain-body mjx-container[jax="CHTML"] {
+  overflow-x: auto; overflow-y: hidden; padding-bottom: 2px;
+}
+
+
+.dashboard-desc .dashbullets li {
+  font-size: 1rem;
+
 .dashboard-desc .note {
-  font-size: 1rem;  /* interpretation note는 가장 작게 */
+  font-size: 1rem;
   color: #000000;
 }
 

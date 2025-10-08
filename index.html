@@ -15,46 +15,54 @@
 	<body class="is-preload">
 		<!-- Wrapper -->
 			<div id="wrapper">
-
-				<!-- Header -->
-					<header id="header" class="alt">
-						<h1>Jay</h1>
-						<p>Computational Design · Computational Social Science · Visualization · HCI</p>
-					</header>
-
-				<button id="hamburger" class="hamburger" aria-label="Open navigation" aria-expanded="false" aria-controls="site-drawer">
-					<div></div>
-					<div></div>
-					<div></div>
+			<!-- Header -->
+				<header id="header" class="alt">
+					<h1>Jay</h1>
+					<p>Computational Design · Computational Social Science · Visualization · HCI</p>
+				</header>
+				
+				<button id="jsHamburger" class="u-hamburger" aria-label="Open navigation" aria-expanded="false" aria-controls="jsDrawer">
+				  <span class="u-hamburger__bar"></span>
+				  <span class="u-hamburger__bar"></span>
+				  <span class="u-hamburger__bar"></span>
 				</button>
 				
-				<!-- slide drawer -->
-				<nav id="site-drawer" class="drawer" aria-hidden="true">
-				  <div class="drawer__header">
-					<strong>Navigate</strong>
-					<button id="drawerClose" class="drawer__close" aria-label="Close navigation">×</button>
+				<!-- 드로어 -->
+				<nav id="jsDrawer" class="u-drawer" aria-hidden="true" aria-label="Site">
+				  <div class="u-drawer__header">
+				    <strong>Navigate</strong>
+				    <button id="jsDrawerClose" class="u-drawer__close" aria-label="Close navigation">×</button>
 				  </div>
 				
-				  <ul class="drawer__list">
-					<li><a href="index.html">Home</a></li>
+				  <ul class="u-drawer__list">
+				    <li><a href="index.html">Home</a></li>
 				
-					<!-- Work -->
-					<li class="has-sub">
-					  <button class="submenu-toggle" aria-expanded="false">Work ▾</button>
-					  <ul class="submenu">
-						<li><a href="ignition.html">Ignition</a></li>
-						<li><a href="ascent.html">Ascent</a></li>
-						<li><a href="orbit.html">Orbit</a></li>
-					  </ul>
-					</li>
+				    <li>
+				      <button id="jsSubToggle" class="" aria-expanded="false" aria-controls="jsSubmenu">Work ▾</button>
+				      <ul id="jsSubmenu" class="u-submenu" hidden>
+				        <li><a href="ignition.html">Ignition</a></li>
+				        <li><a href="ascent.html">Ascent</a></li>
+				        <li><a href="orbit.html">Orbit</a></li>
+				      </ul>
+				    </li>
 				
-					<li><a href="publications.html">Publications</a></li>
-					<li><a href="hobbies.html">Hobbies</a></li>
+				    <li><a href="publications.html">Publications</a></li>
+				    <li><a href="hobbies.html">Hobbies</a></li>
 				  </ul>
 				</nav>
 				
-				<!-- overlay -->
-				<div id="drawerOverlay" class="drawer__overlay" hidden></div>
+				<!-- 오버레이 -->
+				<div id="jsOverlay" class="u-overlay" hidden></div>
+				
+				<!-- 기존 상단 내비(예시) -->
+				<nav id="nav" aria-label="Desktop">
+				  <ul>
+				    <li><a href="#intro" aria-current="page">Introduction</a></li>
+				    <li><a href="#first">Works</a></li>
+				    <li><a href="#second">Publications</a></li>
+				    <li><a href="#cta">Hobbies</a></li>
+				  </ul>
+				</nav>
 
 				<!-- Nav -->
 					<nav id="nav">

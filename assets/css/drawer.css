@@ -33,7 +33,7 @@
     position:fixed; top:0; right:0; height:100vh; width:min(84vw,320px);
     background: rgba(0, 0, 0, .08); box-shadow:-20px 0 30px rgba(0,0,0,.15);
     transform:translateX(100%) !important;  /* 초기 숨김 확정 */
-    transition:transform .25s ease;
+    transition:transform .3s ease;
     z-index:10001; display:flex; flex-direction:column;
     border-left:1px solid rgba(0,0,0,.08);
   }

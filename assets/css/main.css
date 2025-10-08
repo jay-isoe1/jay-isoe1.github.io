@@ -4208,10 +4208,9 @@ details.explain-card:not([open]) .explain-body { display: none; }
 [hidden] { display: none !important; }
 
 /* 드로어가 반드시 '처음엔 숨김' 상태로 시작하도록 테마보다 강하게 고정 */
-body #jsDrawer.u-drawer {
+.u-drawer {
   position: fixed;
   top: 0;
-  right: 0;           /* right → left */
   right: auto;
   height: 100vh;
   width: min(84vw, 320px);
@@ -4224,7 +4223,7 @@ body #jsDrawer.u-drawer {
   flex-direction: column;
   border-right: 1px solid rgba(0,0,0,.08); /* 오른쪽 경계선 */
 }
-body #jsDrawer.u-drawer[aria-hidden="false"] { transform: translateX(0) !important; } /* 열림 */
+.u-drawer[aria-hidden="false"] { transform: translateX(0) !important; } /* 열림 */
 
 /* 오버레이 */
 .u-overlay {
@@ -4235,12 +4234,11 @@ body #jsDrawer.u-drawer[aria-hidden="false"] { transform: translateX(0) !importa
 .u-overlay.is-open { display: block; }
 .u-overlay[hidden] { display: none !important; }
 
-/* 햄버거 버튼: 오른쪽 상단 고정 */
+/* 햄버거 버튼: 왼쪽 상단 고정 */
 .u-hamburger {
   position: fixed;
   top: 16px;
   left: 16px;       /* right → left */
-  right: auto;
   z-index: 10002;
   width: 44px; height: 44px;
   padding: 10px;

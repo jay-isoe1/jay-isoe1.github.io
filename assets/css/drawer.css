@@ -31,7 +31,7 @@
   /* 드로어: 오른쪽에서 왼쪽으로 슬라이드 (초기 반드시 숨김) */
   body #jsDrawer.u-drawer{
     position:fixed; top:0; right:0; height:100vh; width:min(84vw,320px);
-    background: rgba(0, 0, 0, .5); box-shadow:-20px 0 30px rgba(0,0,0,.15);
+    background: rgba(0, 0, 0, .2); box-shadow:-20px 0 30px rgba(0,0,0,.15);
     transform:translateX(100%) !important;  /* 초기 숨김 확정 */
     transition:transform .25s ease;
     z-index:10001; display:flex; flex-direction:column;

@@ -4261,12 +4261,14 @@ background: transparent !important;
 .u-hamburger.is-open .u-hamburger__bar:nth-child(2){ opacity: 0; }
 .u-hamburger.is-open .u-hamburger__bar:nth-child(3){ transform: translateY(-8px) rotate(-45deg); }
 
-/* 드로어 헤더 */
-.u-drawer__header {
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 14px 16px; border-bottom: 1px solid rgba(0,0,0,.08);
+/* 드로어 안 닫기 버튼 숨기기 */
+.u-drawer__close {
+  display: none !important;
 }
-.u-drawer__close { font-size: 24px; background: transparent; border: 0; cursor: pointer; }
+.u-drawer__header {
+  display: none !important; /* 헤더 자체도 필요 없으면 같이 숨김 */
+}
+
 
 /* 메뉴(단일 드로어 구조) */
 .u-menu { list-style: none; margin: 0; padding: 12px 8px; }

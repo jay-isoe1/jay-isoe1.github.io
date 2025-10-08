@@ -4204,36 +4204,51 @@ details.explain-card:not([open]) .explain-body { display: none; }
 }
 
 
-/* 전역 안전망: hidden 속성은 무조건 display:none */
+/* 전역 안전망: hidden은 무조건 숨김 */
 [hidden] { display: none !important; }
 
-
-/* 메뉴 리스트 스타일 */
-.u-menu{ list-style:none; margin:0; padding:12px 8px; }
-.u-link{
-  display:block; padding:12px 14px; border-radius:8px;
-  color:#fff; text-decoration:none; background:transparent;
+/* 드로어가 반드시 '처음엔 숨김' 상태로 시작하도록 테마보다 강하게 고정 */
+body #jsDrawer.u-drawer {
+  position: fixed;
+  top: 0;
+  left: 0;           /* right → left */
+  right: auto;
+  height: 100vh;
+  width: min(84vw, 320px);
+  background: #fff;
+  box-shadow: 20px 0 30px rgba(0,0,0,.15); /* 그림자 방향도 반대 */
+  transform: translateX(-100%);            /* 시작: 왼쪽 밖 */
+  transition: transform .25s ease;
+  z-index: 10001;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid rgba(0,0,0,.08); /* 오른쪽 경계선 */
 }
-.u-link:hover{ background:rgba(0,0,0,.05); }
+body #jsDrawer.u-drawer[aria-hidden="false"] { transform: translateX(0) !important; } /* 열림 */
 
-/* 섹션 라벨과 하위 항목 */
-.u-label{
-  padding:10px 14px; font-weight:700; color:#333;
-  margin-top:6px; /* 위 여백 */
+/* 오버레이 */
+.u-overlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,.25);
+  z-index: 10000; display: none;
 }
-.u-sub .u-link{ padding-left:28px; }
+.u-overlay.is-open { display: block; }
+.u-overlay[hidden] { display: none !important; }
 
-/* 구분선 */
-.u-sep{
-  height:1px; margin:8px 0; background:rgba(0,0,0,.08);
-}
-	
-/* Hamburger button */
+/* 햄버거 버튼: 오른쪽 상단 고정 */
 .u-hamburger {
-  position: fixed; top: 16px; right: 16px; z-index: 10002;
-  width: 44px; height: 44px; padding: 10px; border: 0; border-radius: 10px;
+  position: fixed;
+  top: 16px;
+  left: 16px;       /* right → left */
+  right: auto;
+  z-index: 10002;
+  width: 44px; height: 44px;
+  padding: 10px;
+  border: 0; border-radius: 10px;
   display: inline-flex; align-items: center; justify-content: center;
-  background: transparent; cursor: pointer; color: #fff; /* 배경이 어두우면 #fff */
+  background: transparent;
+  cursor: pointer;
+  color: #fff; /* 필요시 배경에 맞춰 흰색으로 */
 }
 .u-hamburger:focus { outline: 2px solid #6aa9ff; outline-offset: 2px; }
 .u-hamburger__bar {
@@ -4241,64 +4256,51 @@ details.explain-card:not([open]) .explain-body { display: none; }
   transition: transform .2s ease, opacity .2s ease;
 }
 .u-hamburger__bar + .u-hamburger__bar { margin-top: 6px; }
-
 /* X 아이콘 상태 */
-.u-hamburger.is-open .u-hamburger__bar:nth-child(1) {
-  transform: translateY(8px) rotate(45deg);
-}
-.u-hamburger.is-open .u-hamburger__bar:nth-child(2) {
-  opacity: 0;
-}
-.u-hamburger.is-open .u-hamburger__bar:nth-child(3) {
-  transform: translateY(-8px) rotate(-45deg);
-}
+.u-hamburger.is-open .u-hamburger__bar:nth-child(1){ transform: translateY(8px) rotate(45deg); }
+.u-hamburger.is-open .u-hamburger__bar:nth-child(2){ opacity: 0; }
+.u-hamburger.is-open .u-hamburger__bar:nth-child(3){ transform: translateY(-8px) rotate(-45deg); }
 
-/* Drawer panel */
-.u-drawer {
-  position: fixed; top: 0; right: 0; height: 100vh; width: min(84vw, 320px);
-  background: #fff; box-shadow: -20px 0 30px rgba(0,0,0,.15);
-  transform: translateX(100%); transition: transform .25s ease;
-  z-index: 10001; display: flex; flex-direction: column;
-  border-left: 1px solid rgba(0,0,0,.08);
-}
-.u-drawer[aria-hidden="false"] { transform: translateX(0); } /* ARIA로 열림 제어 */
+/* 드로어 헤더 */
 .u-drawer__header {
   display: flex; align-items: center; justify-content: space-between;
   padding: 14px 16px; border-bottom: 1px solid rgba(0,0,0,.08);
 }
-.u-drawer__close {
-  font-size: 24px; background: transparent; border: 0; cursor: pointer;
-}
-.u-drawer__list { list-style: none; margin: 0; padding: 10px 6px; }
-.u-drawer__list a,
-.u-drawer__list button {
-  display: block; width: 100%; text-align: left;
-  padding: 12px 14px; border-radius: 8px;
-  color: #111; text-decoration: none;
-  background: transparent; border: 0;
-}
-.u-drawer__list a:hover,
-.u-drawer__list button:hover {
-  background: rgba(0,0,0,.05);
-}
+.u-drawer__close { font-size: 24px; background: transparent; border: 0; cursor: pointer; }
 
-/* Submenu (Work) */
-.u-submenu[hidden] { display: none !important; }
-
-/* Overlay */
-.u-overlay {
-  position: fixed; inset: 0; background: rgba(0,0,0,.25);
-  z-index: 10000; display: none;
+/* 메뉴(단일 드로어 구조) */
+.u-menu { list-style: none; margin: 0; padding: 12px 8px; }
+.u-link {
+  display: block; padding: 12px 14px; border-radius: 8px;
+  color: #111; text-decoration: none; background: transparent;
 }
-.u-overlay.is-open { display: block; }
-.u-overlay[hidden] { display: none !important; }
+.u-link:hover { background: rgba(0,0,0,.05); }
+
+/* 섹션 라벨과 하위 항목 */
+.u-label {
+  padding: 10px 14px; font-weight: 700; color: #333;
+  margin-top: 6px;
+}
+.u-sub .u-link { padding-left: 28px; }
+
+/* 구분선 */
+.u-sep {
+  height: 1px; margin: 8px 0; background: rgba(0,0,0,.08);
+}
 
 /* (선택) 드로어 열리면 본문 내비 흐림 */
 body.drawer-open #nav { opacity: .25; pointer-events: none; }
 
 /* 접근성: 모션 줄이기 선호 */
-@media (prefers-reduced-motion: reduce) {
+@media (prefers-reduced-motion: reduce){
   .u-drawer { transition: none; }
   .u-hamburger__bar { transition: none; }
 }
 
+/* 모바일에서 기존 상단 nav가 겹치면 숨기고 드로어만 사용 (필요 시) */
+@media (max-width: 980px){
+  /* #nav { display: none; } */
+}
+
+/* 다크 헤더 섹션에서 햄버거 색상 보정(필요 시) */
+/* #header.alt ~ .u-hamburger { color: #fff; } */

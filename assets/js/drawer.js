@@ -75,7 +75,6 @@
     forceClosed();
   }
 
-  // DOM 준비 후 실행
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
   } else {

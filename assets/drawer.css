@@ -1,0 +1,74 @@
+  /* 전역 안전망 */
+  [hidden]{ display:none !important; }
+
+  /* 햄버거(오른쪽 상단 고정) */
+  .u-hamburger{
+    position:fixed; top:16px; right:16px; z-index:10002;
+    width:44px; height:44px; padding:10px; border:0; border-radius:10px;
+    display:inline-flex; flex-direction: column; align-items:center; justify-content:center;
+    background: transparent !important; box-shadow: none !important; border: none !important; 
+    cursor:pointer; color:#111;
+  }
+  .u-hamburger:focus{ outline:2px solid #6aa9ff; outline-offset:2px; }
+  .u-hamburger__bar{
+    width:24px; height:2px; background:currentColor; display:block;
+    transition:transform .2s ease, opacity .2s ease;
+  }
+  .u-hamburger__bar + .u-hamburger__bar{ margin-top:6px; }
+  /* 열렸을 때 X 변환 */
+  .u-hamburger.is-open .u-hamburger__bar:nth-child(1){ transform:translateY(8px) rotate(45deg); }
+  .u-hamburger.is-open .u-hamburger__bar:nth-child(2){ opacity:0; }
+  .u-hamburger.is-open .u-hamburger__bar:nth-child(3){ transform:translateY(-8px) rotate(-45deg); }
+
+  /* 오버레이 */
+  .u-overlay{
+    position:fixed; inset:0; background:rgba(0,0,0,.25);
+    z-index:10000; display:none;
+  }
+  .u-overlay.is-open{ display:block; }
+  .u-overlay[hidden]{ display:none !important; }
+
+  /* 드로어: 오른쪽에서 왼쪽으로 슬라이드 (초기 반드시 숨김) */
+  body #jsDrawer.u-drawer{
+    position:fixed; top:0; right:0; height:100vh; width:min(84vw,320px);
+    background: rgba(0, 0, 0, .3); box-shadow:-20px 0 30px rgba(0,0,0,.15);
+    transform:translateX(100%) !important;  /* 초기 숨김 확정 */
+    transition:transform .25s ease;
+    z-index:10001; display:flex; flex-direction:column;
+    border-left:1px solid rgba(0,0,0,.08);
+  }
+  body #jsDrawer.u-drawer[aria-hidden="false"]{ transform:translateX(0) !important; }
+
+  /* 드로어 안 닫기 버튼 숨기기 */
+  .u-drawer__close {
+    display: none !important;
+  }
+  .u-drawer__header {
+    display: none !important; /* 헤더 자체도 필요 없으면 같이 숨김 */
+  }
+
+
+  /* 메뉴 리스트 */
+  .u-menu{ list-style:none; margin:0; padding:12px 8px; }
+  .u-link{
+    display:block; padding:12px 14px; border-radius:8px;
+    color:#fff; text-decoration:none; background:transparent;
+  }
+  .u-link:hover{ background:rgba(0,0,0,.05); }
+  .u-label{ padding:10px 14px; font-weight:700; color:#fff; margin-top:6px; }
+  .u-sub .u-link{ padding-left:28px; }
+  .u-sep{ height:1px; margin:8px 0; background:rgba(0,0,0,.08); }
+
+  /* 드로어 열리면 상단 고정 내비 흐림(선택) */
+  body.drawer-open #nav{ opacity:.25; pointer-events:none; }
+
+  /* 모바일에선 상단 고정 내비 감추고 드로어 사용 (원하면 켜세요) */
+  @media (max-width: 980px){
+    /* #nav { display:none; } */
+  }
+
+  /* 모션 줄이기 선호 */
+  @media (prefers-reduced-motion: reduce){
+    .u-drawer{ transition:none; }
+    .u-hamburger__bar{ transition:none; }
+  }

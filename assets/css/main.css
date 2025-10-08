@@ -4246,7 +4246,9 @@ body #jsDrawer.u-drawer[aria-hidden="false"] { transform: translateX(0) !importa
   padding: 10px;
   border: 0; border-radius: 10px;
   display: inline-flex; align-items: center; justify-content: center;
-  background: transparent;
+background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
   cursor: pointer;
   color: #fff; /* 필요시 배경에 맞춰 흰색으로 */
 }

@@ -9,7 +9,7 @@
     background: transparent !important; box-shadow: none !important; border: none !important; 
     cursor:pointer; color:#111;
   }
-  .u-hamburger:focus{ outline:2px solid #6aa9ff; outline-offset:2px; }
+  .u-hamburger:focus{ outline:none; }
   .u-hamburger__bar{
     width:24px; height:2px; background:currentColor; display:block;
     transition:transform .2s ease, opacity .2s ease;

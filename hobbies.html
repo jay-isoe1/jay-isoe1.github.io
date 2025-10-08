@@ -10,55 +10,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/drawer.css" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
-    <!-- Drawer 전용 CSS -->
-    <style>
-      [hidden]{ display:none !important; }
-
-      .u-hamburger{
-        position:fixed; top:16px; right:16px; z-index:10002;
-        width:44px; height:44px; padding:10px; border:0; border-radius:10px;
-        display:inline-flex; flex-direction:column; align-items:center; justify-content:center;
-        background:transparent !important; box-shadow:none !important; border:none !important; 
-        cursor:pointer; color:#111;
-      }
-      .u-hamburger__bar{
-        width:24px; height:2px; background:currentColor; display:block;
-        transition:transform .2s ease, opacity .2s ease;
-      }
-      .u-hamburger__bar + .u-hamburger__bar{ margin-top:6px; }
-      .u-hamburger.is-open .u-hamburger__bar:nth-child(1){ transform:translateY(8px) rotate(45deg); }
-      .u-hamburger.is-open .u-hamburger__bar:nth-child(2){ opacity:0; }
-      .u-hamburger.is-open .u-hamburger__bar:nth-child(3){ transform:translateY(-8px) rotate(-45deg); }
-
-      .u-overlay{
-        position:fixed; inset:0; background:rgba(0,0,0,.25);
-        z-index:10000; display:none;
-      }
-      .u-overlay.is-open{ display:block; }
-
-      .u-drawer{
-        position:fixed; top:0; right:0; height:100vh; width:min(84vw,320px);
-        background:rgba(0,0,0,.3); box-shadow:-20px 0 30px rgba(0,0,0,.15);
-        transform:translateX(100%) !important;
-        transition:transform .25s ease;
-        z-index:10001; display:flex; flex-direction:column;
-        border-left:1px solid rgba(0,0,0,.08);
-      }
-      .u-drawer[aria-hidden="false"]{ transform:translateX(0) !important; }
-
-      .u-menu{ list-style:none; margin:0; padding:12px 8px; }
-      .u-link{
-        display:block; padding:12px 14px; border-radius:8px;
-        color:#fff; text-decoration:none; background:transparent;
-      }
-      .u-link:hover{ background:rgba(0,0,0,.05); }
-      .u-label{ padding:10px 14px; font-weight:700; color:#fff; margin-top:6px; }
-      .u-sub .u-link{ padding-left:28px; }
-      .u-sep{ height:1px; margin:8px 0; background:rgba(0,0,0,.08); }
-    </style>
-  </head>
   <body class="is-preload">
 
     <!-- Wrapper -->

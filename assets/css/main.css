@@ -4207,12 +4207,33 @@ details.explain-card:not([open]) .explain-body { display: none; }
 /* 전역 안전망: hidden 속성은 무조건 display:none */
 [hidden] { display: none !important; }
 
+
+/* 메뉴 리스트 스타일 */
+.u-menu{ list-style:none; margin:0; padding:12px 8px; }
+.u-link{
+  display:block; padding:12px 14px; border-radius:8px;
+  color:#fff; text-decoration:none; background:transparent;
+}
+.u-link:hover{ background:rgba(0,0,0,.05); }
+
+/* 섹션 라벨과 하위 항목 */
+.u-label{
+  padding:10px 14px; font-weight:700; color:#333;
+  margin-top:6px; /* 위 여백 */
+}
+.u-sub .u-link{ padding-left:28px; }
+
+/* 구분선 */
+.u-sep{
+  height:1px; margin:8px 0; background:rgba(0,0,0,.08);
+}
+	
 /* Hamburger button */
 .u-hamburger {
   position: fixed; top: 16px; right: 16px; z-index: 10002;
   width: 44px; height: 44px; padding: 10px; border: 0; border-radius: 10px;
   display: inline-flex; align-items: center; justify-content: center;
-  background: transparent; cursor: pointer; color: #111; /* 배경이 어두우면 #fff */
+  background: transparent; cursor: pointer; color: #fff; /* 배경이 어두우면 #fff */
 }
 .u-hamburger:focus { outline: 2px solid #6aa9ff; outline-offset: 2px; }
 .u-hamburger__bar {

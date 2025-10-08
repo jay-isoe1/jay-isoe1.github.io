@@ -179,73 +179,90 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 
-			<script>
-			/* ========== Drawer Logic (vanilla JS) ========== */
-			(function(){
-			  const hamburger = document.getElementById('jsHamburger');
-			  const drawer    = document.getElementById('jsDrawer');
-			  const closeBtn  = document.getElementById('jsDrawerClose');
-			  const overlay   = document.getElementById('jsOverlay');
-			  const subToggle = document.getElementById('jsSubToggle');
-			  const submenu   = document.getElementById('jsSubmenu');
-			
-			  const focusablesSelector = 'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])';
-			  let lastFocused = null;
-			
-			  function openDrawer(){
-			    lastFocused = document.activeElement;
-			    drawer.setAttribute('aria-hidden', 'false');
-			    hamburger.setAttribute('aria-expanded', 'true');
-			    hamburger.classList.add('is-open');
-			    overlay.hidden = false; overlay.classList.add('is-open');
-			    document.body.classList.add('drawer-open');
-			
-			    // 첫 포커스 이동
-			    const first = drawer.querySelector(focusablesSelector);
-			    first && first.focus();
-			
-			    document.addEventListener('keydown', trapFocus);
-			  }
-			
-			  function closeDrawer(){
-			    drawer.setAttribute('aria-hidden', 'true');
-			    hamburger.setAttribute('aria-expanded', 'false');
-			    hamburger.classList.remove('is-open');
-			    overlay.classList.remove('is-open'); overlay.hidden = true;
-			    document.body.classList.remove('drawer-open');
-			
-			    document.removeEventListener('keydown', trapFocus);
-			    (lastFocused || hamburger).focus();
-			  }
-			
-			  function trapFocus(e){
-			    if (e.key === 'Escape'){ closeDrawer(); return; }
-			    if (e.key !== 'Tab') return;
-			
-			    const focusables = drawer.querySelectorAll(focusablesSelector);
-			    if (!focusables.length) return;
-			
-			    const first = focusables[0];
-			    const last  = focusables[focusables.length - 1];
-			
-			    if (e.shiftKey && document.activeElement === first){ last.focus(); e.preventDefault(); }
-			    else if (!e.shiftKey && document.activeElement === last){ first.focus(); e.preventDefault(); }
-			  }
-			
-			  hamburger.addEventListener('click', () => {
-			    const open = hamburger.getAttribute('aria-expanded') === 'true';
-			    open ? closeDrawer() : openDrawer();
-			  });
-			  closeBtn.addEventListener('click', closeDrawer);
-			  overlay.addEventListener('click', closeDrawer);
-			
-			  // Submenu toggle
-			  subToggle.addEventListener('click', () => {
-			    const open = subToggle.getAttribute('aria-expanded') === 'true';
-			    subToggle.setAttribute('aria-expanded', String(!open));
-			    submenu.hidden = open;
-			  });
-			})();
-			</script>
+		<script>
+		(function(){
+		  const hamburger = document.getElementById('jsHamburger');
+		  const drawer    = document.getElementById('jsDrawer');
+		  const closeBtn  = document.getElementById('jsDrawerClose');
+		  const overlay   = document.getElementById('jsOverlay');
+		  if (!hamburger || !drawer || !overlay) return;
+		
+		  const FOCUSABLE = 'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])';
+		  let lastFocused = null;
+		
+		  // 초기 닫힘 강제
+		  function forceClosed(){
+		    drawer.setAttribute('aria-hidden','true');
+		    drawer.setAttribute('inert','');
+		    hamburger.setAttribute('aria-expanded','false');
+		    hamburger.classList.remove('is-open');
+		    overlay.hidden = true;
+		    overlay.classList.remove('is-open');
+		    document.body.classList.remove('drawer-open');
+		  }
+		  forceClosed();
+		
+		  function openDrawer(){
+		    lastFocused = document.activeElement;
+		    drawer.removeAttribute('inert');
+		    drawer.setAttribute('aria-hidden','false');
+		    hamburger.setAttribute('aria-expanded','true');
+		    hamburger.classList.add('is-open');
+		
+		    overlay.hidden = false;
+		    overlay.classList.add('is-open');
+		    document.body.classList.add('drawer-open');
+		
+		    const first = drawer.querySelector(FOCUSABLE);
+		    if (first) first.focus();
+		
+		    document.addEventListener('keydown', onKeydown);
+		  }
+		
+		  function closeDrawer(){
+		    // 포커스를 먼저 밖으로
+		    (lastFocused || hamburger).focus();
+		
+		    drawer.setAttribute('inert','');
+		    drawer.setAttribute('aria-hidden','true');
+		    hamburger.setAttribute('aria-expanded','false');
+		    hamburger.classList.remove('is-open');
+		
+		    overlay.classList.remove('is-open');
+		    overlay.hidden = true;
+		    document.body.classList.remove('drawer-open');
+		
+		    document.removeEventListener('keydown', onKeydown);
+		  }
+		
+		  function onKeydown(e){
+		    if (e.key === 'Escape'){ closeDrawer(); return; }
+		    if (e.key !== 'Tab') return;
+		    const focusables = drawer.querySelectorAll(FOCUSABLE);
+		    if (!focusables.length) return;
+		    const first = focusables[0];
+		    const last  = focusables[focusables.length - 1];
+		    if (e.shiftKey && document.activeElement === first){ last.focus(); e.preventDefault(); }
+		    else if (!e.shiftKey && document.activeElement === last){ first.focus(); e.preventDefault(); }
+		  }
+		
+		  hamburger.addEventListener('click', () => {
+		    const open = hamburger.getAttribute('aria-expanded') === 'true';
+		    open ? closeDrawer() : openDrawer();
+		  });
+		  if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
+		  overlay.addEventListener('click', closeDrawer);
+		
+		  // 드로어 내 링크 클릭하면 자동 닫기
+		  drawer.addEventListener('click', (e) => {
+		    const a = e.target.closest('a');
+		    if (a) closeDrawer();
+		  });
+		
+		  // 히스토리 복원 꼬임 방지
+		  window.addEventListener('pageshow', forceClosed);
+		})();
+		</script>
+
 	</body>
 </html>

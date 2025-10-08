@@ -60,7 +60,7 @@
   .u-sep{ height:1px; margin:8px 0; background:rgba(0,0,0,.08); }
 
   /* 드로어 열리면 상단 고정 내비 흐림(선택) */
-  body.drawer-open #nav{ opacity:.25; pointer-events:none; }
+  body.drawer-open #nav{ opacity:.3; pointer-events:none; }
 
   /* 모바일에선 상단 고정 내비 감추고 드로어 사용 (원하면 켜세요) */
   @media (max-width: 980px){

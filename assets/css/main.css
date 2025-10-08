@@ -4211,7 +4211,7 @@ details.explain-card:not([open]) .explain-body { display: none; }
 body #jsDrawer.u-drawer {
   position: fixed;
   top: 0;
-  left: 0;           /* right → left */
+  right: 0;           /* right → left */
   right: auto;
   height: 100vh;
   width: min(84vw, 320px);

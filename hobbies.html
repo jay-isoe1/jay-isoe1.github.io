@@ -1,192 +1,235 @@
 <!DOCTYPE HTML>
 <!--
-	Stellar by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+  Stellar by HTML5 UP
+  html5up.net | @ajlkn
+  Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-	<head>
-		<title>Information - Jay Ahn Isoe 01</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+  <head>
+    <title>Information - Jay Ahn Isoe 01</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
-		<!-- Wrapper -->
-			<div id="wrapper">
-			<!-- Header -->
-				<header id="header">
-					<h1>Orbit Drift</h1>
-					<p>Off-orbit explorations</p>
-				</header>
-				<!-- 햄버거 버튼 -->
-				<button id="jsHamburger" class="u-hamburger" type="button"
-				  aria-label="Open navigation" aria-expanded="false" aria-controls="jsDrawer">
-				  <span class="u-hamburger__bar"></span>
-				  <span class="u-hamburger__bar"></span>
-				  <span class="u-hamburger__bar"></span>
-				</button>
-				
-				<!-- 오버레이 -->
-				<div id="jsOverlay" class="u-overlay" hidden></div>
-				
-				<!-- 드로어 -->
-				<nav id="jsDrawer" class="u-drawer" aria-hidden="true" aria-label="Site" role="navigation">
-				  <ul class="u-menu" role="list">
-				    <li><a class="u-link" href="index.html">Home</a></li>
-				    <li class="u-sep"></li>
-				
-				    <li class="u-label">Work</li>
-				    <li class="u-sub"><a class="u-link" href="ignition.html">Ignition</a></li>
-				    <li class="u-sub"><a class="u-link" href="ascent.html">Ascent</a></li>
-				    <li class="u-sub"><a class="u-link" href="orbit.html">Orbit</a></li>
-				
-				    <li class="u-sep"></li>
-				    <li><a class="u-link" href="index.html#second">Publications</a></li>
-				
-				    <li class="u-sep"></li>
-				    <li><a class="u-link" href="index.html#cta">Hobbies</a></li>
-				  </ul>
-				</nav>
-				<!-- Photos -->
-				<section id="photos" class="main">
-				  <header class="major">
-				    <h2>Photo Journal</h2>
-				    <p>snaps from walks & trips</p>
-				  </header>
-				
-				  <div class="cards">
-				    <!-- 카드 1 -->
-				    <article class="card">
-				      <button class="thumb" data-full="hobbies/germany-2022.jpg" aria-label="Open full image">
-				        <img src="hobbies/germany-2022.jpg" alt = "days in Germany" loading="lazy">
-					  </button>
-				      <div class="meta">
-				        <h3>Bamberg, Germany</h3>
-				        <p class="sub">Germany, 2023</p>
-				      </div>
-				    </article>
-				
-				    <!-- 카드 2 -->
-				    <article class="card">
-				      <button class="thumb" data-full="hobbies/montreal-2021.jpg" aria-label="Open full image">
-				        <img src="hobbies/montreal-2021.jpg" alt = "days in Canada" loading="lazy">
-					  </button>
-				      <div class="meta">
-				        <h3>Montreal, Canada</h3>
-				        <p class="sub">Canada, 2021</p>
-				      </div>
-				    </article>
-				
-				    <!-- 카드 3 -->
-				    <article class="card">
-				      <button class="thumb" data-full="hobbies/quebec-2021.jpg" aria-label="Open full image">
-				        <img src="hobbies/quebec-2021.jpg" alt = "days in Canada" loading="lazy">
-					  </button>
-				      <div class="meta">
-				        <h3>Quebec, Canada</h3>
-				        <p class="sub">Canada, 2021</p>
-				      </div>
-				    </article>
+    <!-- Drawer 전용 CSS -->
+    <style>
+      [hidden]{ display:none !important; }
 
-					 <!-- 카드 4 -->
-				    <article class="card">
-				      <button class="thumb" data-full="hobbies/montreal-2021-1.jpg" aria-label="Open full image">
-				        <img src="hobbies/montreal-2021-1.jpg" alt = "days in US" loading="lazy">
-					  </button>
-				      <div class="meta">
-				        <h3>Montreal, Canada</h3>
-				        <p class="sub">Canada, 2021</p>
-				      </div>
-				    </article>
-					
-					<!-- 카드 5 -->
-				    <article class="card">
-				      <button class="thumb" data-full="hobbies/boston-2021.jpg" aria-label="Open full image">
-				        <img src="hobbies/boston-2021.jpg" alt = "days in US" loading="lazy">
-					  </button>
-				      <div class="meta">
-				        <h3>Boston, USA</h3>
-				        <p class="sub">USA, 2021</p>
-				      </div>
-				    </article>
+      .u-hamburger{
+        position:fixed; top:16px; right:16px; z-index:10002;
+        width:44px; height:44px; padding:10px; border:0; border-radius:10px;
+        display:inline-flex; flex-direction:column; align-items:center; justify-content:center;
+        background:transparent !important; box-shadow:none !important; border:none !important; 
+        cursor:pointer; color:#111;
+      }
+      .u-hamburger__bar{
+        width:24px; height:2px; background:currentColor; display:block;
+        transition:transform .2s ease, opacity .2s ease;
+      }
+      .u-hamburger__bar + .u-hamburger__bar{ margin-top:6px; }
+      .u-hamburger.is-open .u-hamburger__bar:nth-child(1){ transform:translateY(8px) rotate(45deg); }
+      .u-hamburger.is-open .u-hamburger__bar:nth-child(2){ opacity:0; }
+      .u-hamburger.is-open .u-hamburger__bar:nth-child(3){ transform:translateY(-8px) rotate(-45deg); }
 
-					<!-- 카드 6 -->
-				    <article class="card">
-				      <button div class="thumb" data-full="hobbies/kyoto-2024.jpg" aria-label="Open full image">
-				        <img src="hobbies/kyoto-2024.jpg" alt = "days in Japan" loading="lazy">
-					  </button>
-				      <div class="meta">
-				        <h3>Kyoto, Japan</h3>
-				        <p class="sub">Japan, 2024</p>
-				      </div>
-				    </article>
+      .u-overlay{
+        position:fixed; inset:0; background:rgba(0,0,0,.25);
+        z-index:10000; display:none;
+      }
+      .u-overlay.is-open{ display:block; }
 
-					<article class="card">
-				      <button div class="thumb" data-full="hobbies/kyoto-2024-1.jpg" aria-label="Open full image">
-				        <img src="hobbies/kyoto-2024-1.jpg" alt = "days in Japan" loading="lazy">
-					  </button>
-				      <div class="meta">
-				        <h3>Kyoto, Japan</h3>
-				        <p class="sub">Japan, 2024</p>
-				      </div>
-				    </article>
+      .u-drawer{
+        position:fixed; top:0; right:0; height:100vh; width:min(84vw,320px);
+        background:rgba(0,0,0,.3); box-shadow:-20px 0 30px rgba(0,0,0,.15);
+        transform:translateX(100%) !important;
+        transition:transform .25s ease;
+        z-index:10001; display:flex; flex-direction:column;
+        border-left:1px solid rgba(0,0,0,.08);
+      }
+      .u-drawer[aria-hidden="false"]{ transform:translateX(0) !important; }
 
-					<article class="card">
-				      <button div class="thumb" data-full="hobbies/kyoto-2024-2.jpg" aria-label="Open full image">
-				        <img src="hobbies/kyoto-2024-2.jpg" alt = "days in Japan" loading="lazy">
-					  </button>
-				      <div class="meta">
-				        <h3>Kyoto, Japan</h3>
-				        <p class="sub">Japan, 2024</p>
-				      </div>
-				    </article>
+      .u-menu{ list-style:none; margin:0; padding:12px 8px; }
+      .u-link{
+        display:block; padding:12px 14px; border-radius:8px;
+        color:#fff; text-decoration:none; background:transparent;
+      }
+      .u-link:hover{ background:rgba(0,0,0,.05); }
+      .u-label{ padding:10px 14px; font-weight:700; color:#fff; margin-top:6px; }
+      .u-sub .u-link{ padding-left:28px; }
+      .u-sep{ height:1px; margin:8px 0; background:rgba(0,0,0,.08); }
+    </style>
+  </head>
+  <body class="is-preload">
 
-					<article class="card">
-				      <button div class="thumb" data-full="hobbies/kyoto-2024-3.jpg" aria-label="Open full image">
-				        <img src="hobbies/kyoto-2024-3.jpg" alt = "days in Japan" loading="lazy">
-					  </button>
-				      <div class="meta">
-				        <h3>Kyoto, Japan</h3>
-				        <p class="sub">Japan, 2024</p>
-				      </div>
-				    </article>
-			
-				  </div>
-				</section>
-				
-				<!-- Footer -->
-					<footer id="footer">
-						<section>
-							<h2>Contact</h2>
-								<dt>Address</dt>
-								<dd>345, Songpa-dearo, Songpa-gu, Seoul, Korea</dd>
-								<dt>Phone</dt>
-								<dd>+82 10-5237-8469</dd>
-								<dt>Email</dt>
-								<dd><a href="#">jay.ahn1086@gmail.com</a></dd>
-							</dl>
-							<ul class="icons">
-								<li><a href="https://github.com/jay-isoe1" class="icon brands fa-github alt"><span class="label">GitHub</span></a></li>
-								<li><a href="https://www.linkedin.com/in/jay-ahn-15636b378/" class="icon brands fa-linkedin alt"><span class="label">GitHub</span></a></li>
-								<li><a href="mailto:jay.ahn1086@gmail.com" class="icon solid fa-envelope alt"><span class="label">Email</span></a></li>
-							</ul>
-						</section>
-						<p class="copyright">&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
-					</footer>
+    <!-- Wrapper -->
+    <div id="wrapper">
 
-			</div>
+      <!-- Header -->
+      <header id="header">
+        <h1>Orbit Drift</h1>
+        <p>Off-orbit explorations</p>
+      </header>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+      <!-- 햄버거 버튼 -->
+      <button id="jsHamburger" class="u-hamburger" type="button"
+        aria-label="Open navigation" aria-expanded="false" aria-controls="jsDrawer">
+        <span class="u-hamburger__bar"></span>
+        <span class="u-hamburger__bar"></span>
+        <span class="u-hamburger__bar"></span>
+      </button>
 
-	</body>
+      <!-- 오버레이 -->
+      <div id="jsOverlay" class="u-overlay" hidden></div>
+
+      <!-- 드로어 -->
+      <nav id="jsDrawer" class="u-drawer" aria-hidden="true" aria-label="Site" role="navigation">
+        <ul class="u-menu" role="list">
+          <li><a class="u-link" href="index.html">Home</a></li>
+          <li class="u-sep"></li>
+
+          <li class="u-label">Work</li>
+          <li class="u-sub"><a class="u-link" href="ignition.html">Ignition</a></li>
+          <li class="u-sub"><a class="u-link" href="ascent.html">Ascent</a></li>
+          <li class="u-sub"><a class="u-link" href="orbit.html">Orbit</a></li>
+
+          <li class="u-sep"></li>
+          <li><a class="u-link" href="index.html#second">Publications</a></li>
+
+          <li class="u-sep"></li>
+          <li><a class="u-link" href="index.html#cta">Hobbies</a></li>
+        </ul>
+      </nav>
+
+      <!-- Photos -->
+      <section id="photos" class="main">
+        <header class="major">
+          <h2>Photo Journal</h2>
+          <p>snaps from walks & trips</p>
+        </header>
+
+        <div class="cards">
+          <!-- 카드들 -->
+          <article class="card">
+            <button class="thumb" data-full="hobbies/germany-2022.jpg" aria-label="Open full image">
+              <img src="hobbies/germany-2022.jpg" alt="days in Germany" loading="lazy">
+            </button>
+            <div class="meta">
+              <h3>Bamberg, Germany</h3>
+              <p class="sub">Germany, 2023</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <button class="thumb" data-full="hobbies/montreal-2021.jpg" aria-label="Open full image">
+              <img src="hobbies/montreal-2021.jpg" alt="days in Canada" loading="lazy">
+            </button>
+            <div class="meta">
+              <h3>Montreal, Canada</h3>
+              <p class="sub">Canada, 2021</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <button class="thumb" data-full="hobbies/quebec-2021.jpg" aria-label="Open full image">
+              <img src="hobbies/quebec-2021.jpg" alt="days in Canada" loading="lazy">
+            </button>
+            <div class="meta">
+              <h3>Quebec, Canada</h3>
+              <p class="sub">Canada, 2021</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <button class="thumb" data-full="hobbies/montreal-2021-1.jpg" aria-label="Open full image">
+              <img src="hobbies/montreal-2021-1.jpg" alt="days in Canada" loading="lazy">
+            </button>
+            <div class="meta">
+              <h3>Montreal, Canada</h3>
+              <p class="sub">Canada, 2021</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <button class="thumb" data-full="hobbies/boston-2021.jpg" aria-label="Open full image">
+              <img src="hobbies/boston-2021.jpg" alt="days in US" loading="lazy">
+            </button>
+            <div class="meta">
+              <h3>Boston, USA</h3>
+              <p class="sub">USA, 2021</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <button class="thumb" data-full="hobbies/kyoto-2024.jpg" aria-label="Open full image">
+              <img src="hobbies/kyoto-2024.jpg" alt="days in Japan" loading="lazy">
+            </button>
+            <div class="meta">
+              <h3>Kyoto, Japan</h3>
+              <p class="sub">Japan, 2024</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <button class="thumb" data-full="hobbies/kyoto-2024-1.jpg" aria-label="Open full image">
+              <img src="hobbies/kyoto-2024-1.jpg" alt="days in Japan" loading="lazy">
+            </button>
+            <div class="meta">
+              <h3>Kyoto, Japan</h3>
+              <p class="sub">Japan, 2024</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <button class="thumb" data-full="hobbies/kyoto-2024-2.jpg" aria-label="Open full image">
+              <img src="hobbies/kyoto-2024-2.jpg" alt="days in Japan" loading="lazy">
+            </button>
+            <div class="meta">
+              <h3>Kyoto, Japan</h3>
+              <p class="sub">Japan, 2024</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <button class="thumb" data-full="hobbies/kyoto-2024-3.jpg" aria-label="Open full image">
+              <img src="hobbies/kyoto-2024-3.jpg" alt="days in Japan" loading="lazy">
+            </button>
+            <div class="meta">
+              <h3>Kyoto, Japan</h3>
+              <p class="sub">Japan, 2024</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer id="footer">
+        <section>
+          <h2>Contact</h2>
+          <dl>
+            <dt>Address</dt>
+            <dd>345, Songpa-dearo, Songpa-gu, Seoul, Korea</dd>
+            <dt>Phone</dt>
+            <dd>+82 10-5237-8469</dd>
+            <dt>Email</dt>
+            <dd><a href="mailto:jay.ahn1086@gmail.com">jay.ahn1086@gmail.com</a></dd>
+          </dl>
+          <ul class="icons">
+            <li><a href="https://github.com/jay-isoe1" class="icon brands fa-github alt"><span class="label">GitHub</span></a></li>
+            <li><a href="https://www.linkedin.com/in/jay-ahn-15636b378/" class="icon brands fa-linkedin alt"><span class="label">LinkedIn</span></a></li>
+            <li><a href="mailto:jay.ahn1086@gmail.com" class="icon solid fa-envelope alt"><span class="label">Email</span></a></li>
+          </ul>
+        </section>
+        <p class="copyright">&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+      </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
 </html>

@@ -3960,11 +3960,12 @@ text-align: justify;
 /* --- Photo cards --- */
 #photos .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(40%, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 1.2rem;
 }
 
 #photos .card {
+  margin: 0;
   background: transparent;
   border-radius: 12px;
   overflow: hidden;
@@ -3977,35 +3978,24 @@ text-align: justify;
   box-shadow: 0 10px 24px rgba(0,0,0,0.12);
 }
 
-#photos .thumb {
+/* 순수 이미지 */
+#photos .card img {
   width: 100%;
-  aspect-ratio: 4 / 3;
-  background: #fff;           /* 흰 배경 */
-  border: 0;
-  padding: 0;
-  margin: 0;
-  cursor: pointer;
-  display: grid;
-  place-items: center;        /* 가운데 정렬 */
-}
-
-#photos .thumb img {
-  max-width: 90%;
-  max-height: 90%;
-  width: auto;
-  height: auto;
-  object-fit: contain;        /* 전체 보이게 */
+  height: 100%;
+  aspect-ratio: 4 / 3;        /* 카드 비율 통일 (원하면 제거 가능) */
+  object-fit: cover;          /* 사진을 꽉 채우기 - 전체 보이게 원하면 contain */
   display: block;
 }
 
-/* caption */
+/* 캡션(옵션) */
 #photos .meta {
-  background: #fff;           /* 흰 배경 유지 */
+  background: #fff;
   padding: .8rem 1rem 1rem;
   border-top: 1px solid rgba(0,0,0,.06);
 }
 #photos .meta h3 { margin: 0 0 .25rem; font-size: 1rem; }
 #photos .meta .sub { margin: 0; opacity: .7; font-size: .9rem; }
+
 
 /* 라이트박스 모달 */
 .img-modal {

@@ -1,9 +1,4 @@
 <!DOCTYPE HTML>
-<!--
-  Stellar by HTML5 UP
-  html5up.net | @ajlkn
-  Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
   <head>
     <title>Hobbies - Jay Ahn Isoe 01</title>
@@ -12,6 +7,44 @@
     <link rel="stylesheet" href="assets/css/main.css" />
     <link rel="stylesheet" href="assets/css/drawer.css" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <style>
+      /* --- Photo cards --- */
+      #photos .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 1.2rem;
+      }
+
+      #photos .card {
+        margin: 0;
+        background: transparent;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+        transition: transform .15s ease, box-shadow .15s ease;
+      }
+
+      #photos .card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+      }
+
+      #photos .card img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 4 / 3;     /* 비율 맞추기 (필요 없으면 삭제 가능) */
+        object-fit: cover;       /* cover=꽉 차게, contain=전체 보이게 */
+        display: block;
+      }
+
+      #photos .meta {
+        background: #fff;
+        padding: .8rem 1rem 1rem;
+        border-top: 1px solid rgba(0,0,0,.06);
+      }
+      #photos .meta h3 { margin: 0 0 .25rem; font-size: 1rem; }
+      #photos .meta .sub { margin: 0; opacity: .7; font-size: .9rem; }
+    </style>
   </head>
 
   <body class="is-preload">
@@ -57,104 +90,55 @@
 
       <!-- Photos -->
       <div id="main">
-        <section id = "first" class="main">
+        <section id="photos" class="main">
           <h2>Photo Journal</h2>
           <p>snaps from walks & trips</p>
+
+          <div class="cards">
+            <figure class="card">
+              <img src="hobbies/germany-2022.jpg" alt="Bamberg, Germany" loading="lazy">
+              <figcaption class="meta">
+                <h3>Bamberg, Germany</h3>
+                <p class="sub">Germany, 2023</p>
+              </figcaption>
+            </figure>
+
+            <figure class="card">
+              <img src="hobbies/montreal-2021.jpg" alt="Montreal, Canada" loading="lazy">
+              <figcaption class="meta">
+                <h3>Montreal, Canada</h3>
+                <p class="sub">Canada, 2021</p>
+              </figcaption>
+            </figure>
+
+            <figure class="card">
+              <img src="hobbies/quebec-2021.jpg" alt="Quebec, Canada" loading="lazy">
+              <figcaption class="meta">
+                <h3>Quebec, Canada</h3>
+                <p class="sub">Canada, 2021</p>
+              </figcaption>
+            </figure>
+
+            <figure class="card">
+              <img src="hobbies/boston-2021.jpg" alt="Boston, USA" loading="lazy">
+              <figcaption class="meta">
+                <h3>Boston, USA</h3>
+                <p class="sub">USA, 2021</p>
+              </figcaption>
+            </figure>
+
+            <figure class="card">
+              <img src="hobbies/kyoto-2024.jpg" alt="Kyoto, Japan" loading="lazy">
+              <figcaption class="meta">
+                <h3>Kyoto, Japan</h3>
+                <p class="sub">Japan, 2024</p>
+              </figcaption>
+            </figure>
+
+            <!-- 다른 사진도 동일한 패턴으로 추가 -->
+          </div>
         </section>
-
-        <div class="cards">
-          <!-- 카드들 -->
-          <article class="card">
-            <button class="thumb" data-full="hobbies/germany-2022.jpg" aria-label="Open full image">
-              <img src="hobbies/germany-2022.jpg" alt="days in Germany" loading="lazy">
-            </button>
-            <div class="meta">
-              <h3>Bamberg, Germany</h3>
-              <p class="sub">Germany, 2023</p>
-            </div>
-          </article>
-
-          <article class="card">
-            <button class="thumb" data-full="hobbies/montreal-2021.jpg" aria-label="Open full image">
-              <img src="hobbies/montreal-2021.jpg" alt="days in Canada" loading="lazy">
-            </button>
-            <div class="meta">
-              <h3>Montreal, Canada</h3>
-              <p class="sub">Canada, 2021</p>
-            </div>
-          </article>
-
-          <article class="card">
-            <button class="thumb" data-full="hobbies/quebec-2021.jpg" aria-label="Open full image">
-              <img src="hobbies/quebec-2021.jpg" alt="days in Canada" loading="lazy">
-            </button>
-            <div class="meta">
-              <h3>Quebec, Canada</h3>
-              <p class="sub">Canada, 2021</p>
-            </div>
-          </article>
-
-          <article class="card">
-            <button class="thumb" data-full="hobbies/montreal-2021-1.jpg" aria-label="Open full image">
-              <img src="hobbies/montreal-2021-1.jpg" alt="days in Canada" loading="lazy">
-            </button>
-            <div class="meta">
-              <h3>Montreal, Canada</h3>
-              <p class="sub">Canada, 2021</p>
-            </div>
-          </article>
-
-          <article class="card">
-            <button class="thumb" data-full="hobbies/boston-2021.jpg" aria-label="Open full image">
-              <img src="hobbies/boston-2021.jpg" alt="days in US" loading="lazy">
-            </button>
-            <div class="meta">
-              <h3>Boston, USA</h3>
-              <p class="sub">USA, 2021</p>
-            </div>
-          </article>
-
-          <article class="card">
-            <button class="thumb" data-full="hobbies/kyoto-2024.jpg" aria-label="Open full image">
-              <img src="hobbies/kyoto-2024.jpg" alt="days in Japan" loading="lazy">
-            </button>
-            <div class="meta">
-              <h3>Kyoto, Japan</h3>
-              <p class="sub">Japan, 2024</p>
-            </div>
-          </article>
-
-          <article class="card">
-            <button class="thumb" data-full="hobbies/kyoto-2024-1.jpg" aria-label="Open full image">
-              <img src="hobbies/kyoto-2024-1.jpg" alt="days in Japan" loading="lazy">
-            </button>
-            <div class="meta">
-              <h3>Kyoto, Japan</h3>
-              <p class="sub">Japan, 2024</p>
-            </div>
-          </article>
-
-          <article class="card">
-            <button class="thumb" data-full="hobbies/kyoto-2024-2.jpg" aria-label="Open full image">
-              <img src="hobbies/kyoto-2024-2.jpg" alt="days in Japan" loading="lazy">
-            </button>
-            <div class="meta">
-              <h3>Kyoto, Japan</h3>
-              <p class="sub">Japan, 2024</p>
-            </div>
-          </article>
-
-          <article class="card">
-            <button class="thumb" data-full="hobbies/kyoto-2024-3.jpg" aria-label="Open full image">
-              <img src="hobbies/kyoto-2024-3.jpg" alt="days in Japan" loading="lazy">
-            </button>
-            <div class="meta">
-              <h3>Kyoto, Japan</h3>
-              <p class="sub">Japan, 2024</p>
-            </div>
-          </article>
-        </div>
-      </section>
+      </div>
 
       <!-- Footer -->
       <footer id="footer">

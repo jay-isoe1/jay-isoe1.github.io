@@ -74,27 +74,31 @@
     
       <div class="dashboard-desc">
         <p>
-          This dashboard combines <b>10 years</b> of urban <b>crime</b> and 
-          <b>environmental</b> data to let you explore their relationships 
-          at the <b>district (gu)</b> level across major Korean cities. 
-          It provides an <b>interactive visualization</b> that analyzes how 
-          environmental factors move with crime outcomes, city by city.
+          This dashboard uses <b>2015–2022</b> district-level data for Seoul to explore how
+          <b>crime</b>, <b>park area</b>, and <b>GDP (GRDP)</b> vary across <b>gu</b>.
+          Built with a <b>Flask</b> backend and <b>D3.js + DC.js + Crossfilter</b> on the frontend,
+          it supports interactive filtering and linked updates across the map and charts.
         </p>
       
         <ul style="list-style:none; margin:0; padding:0;">
-          <li>✦ <b>Time span:</b> Last 10 years</li>
-          <li>✦ <b>Spatial unit:</b> Districts (gu) across multiple cities in South Korea</li>
-          <li>✦ <b>Metrics:</b> Crime rate, park-related indicators, population density, GRDP, etc.</li>
-          <li>✦ <b>How to use:</b> Choose a <b>city</b> and an <b>indicator</b> to update the map. 
-              Use the legend to read relative values. Zoom/pan with the mouse; click a district to focus.</li>
+          <li>✦ <b>Time span:</b> 2015–2022</li>
+          <li>✦ <b>Spatial unit:</b> Districts (gu), Seoul</li>
+          <li>✦ <b>Metrics:</b> Crime rate, Park area, GDP (GRDP) </li>
+          <li>✦ <b>How to use:</b> Click metric buttons to toggle the map view.
+                Select <b>one</b> metric to see its distribution by district.
+                Select <b>two</b> metrics to switch into <b>correlation mode</b>:
+                <b>Crime × Park</b> or <b>Crime × GDP</b>. Click again to deselect.</li>
+          <li>✦ <b>Interaction:</b> Use the legend to interpret colors; click a district to filter/focus.
+                Use the year chart to filter the time range.</li>
         </ul>
       
-        <p style="margin-top:.5rem;">
-          <b>Interpretation note:</b> The visualization shows <em>correlations</em>, not causation. 
-          Please consider local context and other factors (e.g., demographics, development) 
-          when interpreting patterns.
-        </p>
-      </div>
+            
+          <p style="margin-top:.5rem;">
+            <b>Interpretation note:</b> Correlation reflects co-variation, not causation.
+            Patterns may be influenced by unobserved factors (e.g., population, reporting practices,
+            land use, development).
+          </p>
+        </div>
     </section>
       
     <section id = "second" class = "main">
